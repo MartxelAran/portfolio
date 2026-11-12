@@ -4,11 +4,11 @@
   "age": 25,
   "title": "Software developer & full stack",
   "location": "Madrid, España",
-  "intro": "Desarrollo aplicaciones web que conectan interfaces y datos. Actualmente trabajo en Arfima Trading, en Madrid. Soy graduado en Ingeniería Informática y máster en Ingeniería Web.",
+  "intro": "Me gusta construir soluciones completas: entender qué necesita un proyecto, elegir las tecnologías adecuadas y conectarlas para que funcionen juntas. En equipos pequeños he ido más allá del desarrollo web o full stack, moviéndome entre distintas capas según cada reto.",
   "about": [
-    "Mi recorrido empezó con bases de datos Oracle y continuó con aplicaciones web, gestión de fuentes de información y análisis de riesgo climático.",
+    "Mi recorrido va de la administración de bases de datos Oracle al desarrollo de aplicaciones web y al análisis de riesgo climático. En equipos pequeños he aprendido a moverme entre capas y tecnologías para resolver lo que necesita cada proyecto, desde organizar los datos hasta conectarlos con una interfaz o automatizar un proceso.",
     "Me gradué en Ingeniería Informática en Mondragon Unibertsitatea y completé el Máster en Ingeniería Web en la Universidad Politécnica de Madrid. Mi formación también incluye una experiencia Erasmus en Suecia.",
-    "Mi recorrido conecta la administración de bases de datos Oracle, un TFG de desarrollo full stack en Innguma y mi trabajo actual en Arfima Trading. También formo parte del equipo de ingeniería de Alpha-Klima."
+    "Me interesa construir el conjunto: entender el problema, encontrar las piezas tecnológicas adecuadas y hacer que trabajen juntas en una solución útil. También formo parte del equipo de ingeniería de Alpha-Klima."
   ],
   "social": {
     "linkedin": "https://linkedin.com/in/martxel-aranzadi-olazabal/",
@@ -155,11 +155,7 @@
         "PHP",
         "Joomla",
         "Docker"
-      ],
-      "document": {
-        "path": "ARANZADI-OLAZABAL-MARTXEL-2023-40719 (1).pdf",
-        "label": "Leer la memoria del TFG · PDF en euskera"
-      }
+      ]
     },
     {
       "slug": "mondragon",
@@ -241,7 +237,7 @@
         "supports": "25 años, titulación, Arfima como empleo actual, Erasmus en Suecia, prácticas con Oracle 2021-julio 2023 e inicio en Innguma en agosto de 2023. La descripción del TFG se ha precisado con la memoria aportada, que sitúa la clasificación con IA como trabajo futuro."
       },
       {
-        "source": "PDF aportado por el usuario: public/ARANZADI-OLAZABAL-MARTXEL-2023-40719 (1).pdf",
+        "source": "Memoria del TFG aportada por el usuario y conservada fuera de la carpeta pública del sitio",
         "supports": "Título original, autoría, curso 2023/2024, director Javier Arkauz y tutor Eneko Arza; colaboración con Innguma y el departamento TIC de IDEKO. Apartados 2.3–2.6 y 3: Next.js/React, Tailwind CSS, TanStack Table, Python/Flask, MySQL, PHP/Joomla, Docker, API y catálogo multilingüe. Apartado 6.2: la clasificación con IA se plantea como línea futura; no se presenta como una funcionalidad implementada en el TFG. Los apartados 1.6.1, 2.3.4.4, 2.3.4.6 y 2.4.6 también documentan GitLab, Postman, NextAuth, JWT y Docker Compose, utilizados para completar las categorías compartidas de ambos proyectos."
       },
       {
@@ -281,6 +277,18 @@
       ],
       "workflowCaption": "Esquema de las funcionalidades del TFM.",
       "experienceSlug": "arfima",
+      "images": [
+        {
+          "src": "images/projects/tfm-validacion-portfolio.png",
+          "alt": "Vista de la cartera importada y su tabla de datos en la aplicación del TFM.",
+          "caption": "Vista de validación de una cartera importada."
+        },
+        {
+          "src": "images/projects/tfm-airflow-dags.png",
+          "alt": "Lista de flujos de análisis de riesgo climático en Apache Airflow.",
+          "caption": "Flujos de análisis climático gestionados con Apache Airflow."
+        }
+      ],
       "technologyGroups": [
         {
           "title": "Interfaz",
@@ -344,9 +352,7 @@
       "description": "Desarrollé una aplicación para revisar, categorizar y etiquetar fuentes de información digital, gestionar sus traducciones y publicarlas en el catálogo de Innguma.",
       "problem": "Las fuentes añadidas por los usuarios necesitaban una gestión centralizada y un catálogo organizado que facilitara descubrir y seleccionar información relevante.",
       "contribution": "Construí el panel con Next.js y React, la API con Python y Flask y la base de datos MySQL. Integré el catálogo en el software existente con PHP y Joomla y añadí la gestión de traducciones de fuentes, categorías y etiquetas.",
-      "document": "ARANZADI-OLAZABAL-MARTXEL-2023-40719 (1).pdf",
-      "linkLabel": "Leer el TFG · PDF en euskera",
-      "evidence": "Memoria original del curso 2023/2024, con resúmenes en castellano e inglés, arquitectura y capturas del panel.",
+      "evidence": "Proyecto desarrollado durante el curso 2023/2024. La arquitectura y las funcionalidades se describen a partir de la documentación del proyecto.",
       "workflowTitle": "De la fuente al catálogo.",
       "workflow": [
         "Revisar fuentes",
@@ -356,6 +362,13 @@
       ],
       "workflowCaption": "Funcionalidades documentadas en la memoria del TFG.",
       "experienceSlug": "innguma",
+      "images": [
+        {
+          "src": "images/projects/tfg-integracion.svg",
+          "alt": "Panel Next.js conectado con una API Flask y MySQL, integrado con el catálogo PHP y Joomla.",
+          "caption": "Resumen de la conexión entre el panel, los datos y el catálogo."
+        }
+      ],
       "technologyGroups": [
         {
           "title": "Interfaz",
@@ -407,13 +420,13 @@
     {
       "slug": "pizza-per-tutti",
       "name": "Pizza Per Tutti",
-      "summary": "Web de una pizzería de Arrasate con carta, precios, alérgenos, horarios y contacto. Construida con Astro y Tailwind CSS y disponible para visitar.",
-      "label": "WEB PÚBLICA / ASTRO",
-      "title": "Una carta digital para una pizzería de Arrasate.",
+      "summary": "Web para una pizzería de Arrasate con una identidad visual renovada, carta, horarios y contacto.",
+      "label": "WEB PÚBLICA / ASTRO · IDENTIDAD VISUAL",
+      "title": "Una web y una identidad visual renovada para Pizza Per Tutti.",
       "institution": "Pizza Per Tutti · Arrasate",
       "description": "Una web orientada a consultar la carta de Pizza Per Tutti, conocer sus horarios y encontrar cómo contactar con el local. La portada presenta una selección de pizzas y la página de carta reúne las categorías, los precios y los alérgenos.",
       "problem": "Concentrar en una web fácil de consultar desde el móvil la información que necesita alguien antes de hacer un pedido: qué hay en la carta, cuánto cuesta, cuándo abre el local y cómo llamar o llegar.",
-      "contribution": "Desarrollo de una web con componentes Astro y estilos Tailwind CSS, una carta generada desde JSON y navegación adaptada a móvil. Incluye información de alérgenos, enlaces de llamada, mapa y un indicador de apertura calculado a partir del horario.",
+      "contribution": "Desarrollé la web con Astro y Tailwind CSS, preparé la carta desde JSON y adapté la navegación a móvil. También rediseñé el logotipo y definí una nueva paleta de colores para dar coherencia a la identidad visual del proyecto. La página reúne información de alérgenos, enlaces de llamada, mapa y un indicador de apertura calculado a partir del horario.",
       "technologyGroups": [
         { "title": "Interfaz", "items": ["Astro", "Tailwind CSS", "HTML", "TypeScript"] },
         { "title": "Datos", "items": ["JSON"] },
@@ -448,6 +461,13 @@
       ],
       "url": "https://github.com/MartxelAran/SoundBeats",
       "linkLabel": "Ver código en GitHub",
+      "images": [
+        {
+          "src": "images/projects/soundbeats-flow.svg",
+          "alt": "Flujo colaborativo de consulta y audio en Spring Boot, recepción de un resultado externo mediante RabbitMQ y revisión en el historial.",
+          "caption": "Flujo general del prototipo colaborativo."
+        }
+      ],
       "evidence": "El repositorio público incluye los controladores, las vistas, la integración con RabbitMQ, las pruebas y un flujo Maven de compilación y análisis con Sonar. Su historial recoge la participación de varios colaboradores.",
       "workflowTitle": "Del audio a la revisión.",
       "workflow": ["Cargar el archivo de audio", "Registrar la consulta", "Recibir un resultado por RabbitMQ", "Consultar el historial y revisar"],
@@ -471,6 +491,13 @@
       ],
       "url": "https://github.com/MartxelAran/TiendaPeliculasNet",
       "linkLabel": "Ver código en GitHub",
+      "images": [
+        {
+          "src": "images/projects/tienda-flow.svg",
+          "alt": "Flujo del catálogo y carrito al registro del pedido y la persistencia en SQL Server.",
+          "caption": "Resumen del flujo de compra y persistencia."
+        }
+      ],
       "evidence": "El repositorio contiene la solución .NET, los controladores, las vistas y los modelos de datos. El script SQL y las dependencias permiten consultar cómo se relacionan películas, pedidos y líneas de pedido.",
       "workflowTitle": "Del catálogo al pedido.",
       "workflow": ["Consultar películas y stock", "Añadir películas al carrito", "Registrar el pedido", "Actualizar y consultar los pedidos"],

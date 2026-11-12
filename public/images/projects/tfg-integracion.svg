@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Componentes del catálogo de fuentes</title>
+  <desc id="desc">Panel de administración conectado a una API Flask y una base MySQL, integrado con el catálogo PHP y Joomla.</desc>
+  <rect width="1200" height="500" fill="#f3f3f3"/>
+  <g font-family="Consolas,monospace" fill="#1e1e1e">
+    <text x="56" y="68" font-size="16" fill="#267f99">FLUJO DEL TFG</text>
+    <text x="56" y="113" font-size="29">Gestión de fuentes · del panel al catálogo</text>
+    <g font-size="19">
+      <rect x="55" y="185" width="235" height="170" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="2"/>
+      <text x="78" y="232" fill="#007acc">01 / INTERFAZ</text><text x="78" y="278">Panel de gestión</text><text x="78" y="316" font-size="16" fill="#616161">Next.js · React</text>
+      <rect x="365" y="185" width="235" height="170" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="2"/>
+      <text x="388" y="232" fill="#007acc">02 / API</text><text x="388" y="278">Gestión de fuentes</text><text x="388" y="316" font-size="16" fill="#616161">Python · Flask</text>
+      <rect x="675" y="185" width="205" height="170" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="2"/>
+      <text x="698" y="232" fill="#007acc">03 / DATOS</text><text x="698" y="271">Fuentes y</text><text x="698" y="296">etiquetas</text><text x="698" y="329" font-size="16" fill="#616161">MySQL</text>
+      <rect x="955" y="185" width="205" height="170" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="2"/>
+      <text x="978" y="232" fill="#007acc">04 / CATÁLOGO</text><text x="978" y="278">Publicación</text><text x="978" y="316" font-size="16" fill="#616161">PHP · Joomla</text>
+    </g>
+    <g fill="none" stroke="#007acc" stroke-width="4">
+      <path d="M290 270h65m-13-13 13 13-13 13"/><path d="M600 270h65m-13-13 13 13-13 13"/><path d="M880 270h65m-13-13 13 13-13 13"/>
+    </g>
+    <text x="56" y="425" font-size="16" fill="#616161">El panel administra las fuentes y sus traducciones; el catálogo se integra en el software existente.</text>
+  </g>
+</svg>

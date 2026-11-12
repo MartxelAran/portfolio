@@ -32,12 +32,13 @@ export interface Project {
   url?: string;
   demoUrl?: string;
   document?: string;
-  linkLabel: string;
+  linkLabel?: string;
   evidence: string;
   workflowTitle: string;
   workflow: string[];
   workflowCaption: string;
   experienceSlug?: string;
+  images?: { src: string; alt: string; caption: string; fit?: string }[];
 }
 
 export interface Portfolio {

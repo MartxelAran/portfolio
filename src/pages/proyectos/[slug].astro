@@ -35,6 +35,12 @@ const sections = [
       {project.originalTitle && <p lang="eu" class="mt-4 text-sm leading-relaxed text-muted wrap-anywhere">{project.originalTitle}</p>}
       <p class="mt-6 max-w-[78ch] text-base leading-[1.85] text-muted sm:text-lg">{project.description}</p>
       <p class="mt-8 border-y border-line py-5 text-sm leading-relaxed text-muted">{project.institution}</p>
+      {project.images?.length && <div class:list={["mt-7 grid gap-4", project.images.length > 1 && 'sm:grid-cols-2']} role="group" aria-label="Imágenes del proyecto">
+        {project.images.map((image) => <figure class="min-w-0 overflow-hidden rounded border border-line bg-soft">
+          <div class="aspect-[16/9] overflow-hidden"><img src={url(image.src)} alt={image.alt} loading="lazy" decoding="async" class:list={["h-full w-full", image.fit === 'cover' ? 'object-cover' : 'object-contain p-3 sm:p-5']} /></div>
+          <figcaption class="border-t border-line px-4 py-3 text-xs leading-relaxed text-muted">{image.caption}</figcaption>
+        </figure>)}
+      </div>}
     </section>
 
     <div class="my-10 grid grid-cols-1 items-start gap-8 md:my-16 md:grid-cols-[180px_minmax(0,1fr)] md:gap-10 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-[75px]">

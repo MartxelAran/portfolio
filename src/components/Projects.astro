@@ -1,0 +1,28 @@
+---
+import { portfolio, projectUrl, number, type Project } from '../lib/portfolio';
+import { wrap, sectionSpace, syntax, eyebrow, mono } from '../lib/ui';
+import SectionHeading from './SectionHeading.astro';
+import Tags from './Tags.astro';
+
+const projects: Project[] = portfolio.projects;
+---
+<section id="proyectos" class:list={[wrap, sectionSpace]} aria-labelledby="projects-title">
+  <SectionHeading label="01 / PROYECTOS" id="projects-title">Software con<br /><span class={syntax}>un problema que resolver.</span><Fragment slot="intro">Una selección de mi trabajo.<br />Entra en cada proyecto para conocer los detalles.</Fragment></SectionHeading>
+
+  <div>
+    {projects.map((project, index) => (
+      <a id={`proyecto-${project.slug}`} href={projectUrl(project.slug)} aria-label={`Ver proyecto: ${project.name}`} class="project-row group grid grid-cols-[24px_minmax(0,1fr)] items-start gap-x-3 gap-y-4 border-t border-line py-7 transition-colors last:border-b hover:bg-soft md:grid-cols-[28px_minmax(0,.85fr)_minmax(0,1.15fr)_auto] md:gap-6 md:py-8">
+        <span class:list={[mono, 'pt-1.5 text-[11px] text-muted']}>{number(index)}</span>
+        <div class="min-w-0">
+          <p class:list={[eyebrow, 'mb-2 text-code-comment']}>{project.label}</p>
+          <h3 class="text-xl leading-[1.4] tracking-[-.035em] wrap-anywhere lg:text-[23px]">{project.name}</h3>
+        </div>
+        <div class="col-start-2 min-w-0 md:col-auto">
+          <p class="text-sm leading-[1.8] text-muted">{project.summary}</p>
+          <Tags items={project.technologyGroups.map((group) => group.items[0]).filter(Boolean).slice(0, 5)} class="mt-3" />
+        </div>
+        <span class="col-start-2 inline-flex min-h-11 items-center gap-3 self-end text-sm text-accent-ink group-hover:underline group-hover:underline-offset-5 md:col-auto md:self-center">Ver proyecto <span aria-hidden="true">→</span></span>
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+import { portfolio, number } from '../lib/portfolio';
+import { wrap, sectionSpace, eyebrow, heading, syntax, mono } from '../lib/ui';
+---
+<section id="sobre-mi" class="bg-soft" aria-labelledby="about-title">
+  <div class:list={[wrap, sectionSpace, 'grid grid-cols-1 gap-[30px] sm:grid-cols-[.85fr_1.15fr] sm:gap-[35px] md:grid-cols-[1fr_1.13fr] md:gap-[60px] lg:gap-[100px]']}>
+    <div class="relative flex flex-col items-start">
+      <p class={eyebrow}>03 / SOBRE MÍ</p>
+      <h2 id="about-title" class={heading}>Más allá<br />del <span class={syntax}>código.</span></h2>
+      <div class="absolute right-[3px] bottom-0 text-[50px] leading-[1.1] text-code-comment sm:static sm:mt-auto sm:pt-[42px] sm:text-[96px]" aria-hidden="true">&#123; &#125;</div>
+      <span class="mt-5 hidden font-mono text-[11px] tracking-[.06em] text-muted sm:inline">CURIOSIDAD COMO PUNTO DE PARTIDA</span>
+    </div>
+    <div>
+      {portfolio.about.map((paragraph, index) => <p class:list={['mb-[18px]', index === 0 ? 'text-[21px] leading-[1.5] tracking-[-.025em] text-ink sm:text-xl md:text-[22px]' : 'text-base leading-[1.9] text-muted']}>{paragraph}</p>)}
+      <div class="mt-[35px]" aria-label="Formación">
+        {portfolio.education.map((item, index) => (
+          <div class="grid grid-cols-[25px_1fr_20px] items-start gap-[15px] border-t border-line py-[19px]">
+            <span class:list={[mono, 'pt-[3px] text-muted']}>{number(index)}</span>
+            <div><h3 class="text-base leading-[1.5] tracking-[-.025em]">{item.degree}</h3><p class="mt-1 text-xs leading-relaxed text-muted">{item.detail}</p></div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-[25px] border-t border-line pt-6">
+        <h3 class={eyebrow}>IDIOMAS</h3>
+        <dl class="mt-[17px] grid gap-3">{portfolio.languages.map((language) => <div class="flex items-baseline justify-between gap-5"><dt class="text-sm">{language.name}</dt><dd class="m-0 text-right text-xs text-muted">{language.level}</dd></div>)}</dl>
+      </div>
+    </div>
+  </div>
+</section>

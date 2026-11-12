@@ -1,0 +1,31 @@
+---
+import { portfolio, experienceUrl, url } from '../lib/portfolio';
+import { wrap, eyebrow, syntax, button, textLink, statusDot } from '../lib/ui';
+import ExternalLink from './ExternalLink.astro';
+const [firstName, ...lastNames] = portfolio.name.split(' ');
+const currentExperience = portfolio.experiences.find((experience) => experience.current);
+---
+<section class:list={[wrap, 'grid grid-cols-1 items-center gap-10 py-12 md:grid-cols-[minmax(0,1.25fr)_minmax(0,.75fr)] md:gap-12 md:py-20 lg:gap-20']} aria-labelledby="hero-title">
+  <div>
+    <p class:list={[eyebrow, 'flex items-center gap-2.5 text-xs text-code-comment']}><span aria-hidden="true">//</span> DESARROLLADOR DE SOFTWARE</p>
+    <h1 id="hero-title" class="my-6 text-[clamp(44px,11vw,72px)] leading-[1.08] tracking-[-.055em] md:text-[clamp(60px,6.2vw,88px)]"><span class="block">{firstName}</span><span class={syntax}>{lastNames.join(' ')}</span><span class="text-keyword" aria-hidden="true">_</span></h1>
+    <p class="text-xl leading-normal tracking-tight text-ink sm:text-2xl">Ingeniería web y desarrollo full stack.</p>
+    <p class="mt-5 max-w-140 text-base leading-[1.85] text-muted sm:text-lg">{portfolio.intro}</p>
+    <div class="mt-8 flex flex-wrap items-center gap-6">
+      <a href="#proyectos" class={button}>Ver proyectos <span class="text-lg leading-none font-normal" aria-hidden="true">↘</span></a>
+      <ExternalLink href={portfolio.social.github} class={textLink}>Mi GitHub</ExternalLink>
+    </div>
+    {currentExperience && <a href={experienceUrl(currentExperience.slug)} class="mt-7 inline-flex min-h-11 items-center gap-2.5 text-sm text-muted hover:text-accent-ink"><span class={statusDot} aria-hidden="true"></span>Actualmente en {currentExperience.company}<span aria-hidden="true">↗</span></a>}
+  </div>
+  <figure class="relative w-full max-w-110 justify-self-center overflow-hidden rounded border border-line bg-soft md:justify-self-end">
+    <div class="flex items-center justify-between border-b border-line px-4 py-3 text-xs text-muted"><span><span class="mr-2 text-keyword" aria-hidden="true">&#123; &#125;</span>perfil.ts</span><span aria-hidden="true">···</span></div>
+    <div class="relative h-85 overflow-hidden sm:h-97.5 lg:h-107.5">
+      <img src={url('images/sobre-mi.jpeg')} alt="Martxel Aranzadi, con una ciudad y un fiordo al fondo" width="1368" height="1824" fetchpriority="high" class="h-full w-full origin-[50%_77%] scale-[1.25] object-cover object-[50%_72%] grayscale md:origin-[50%_78%] md:scale-[1.45] md:object-[50%_78%]" />
+      <div class="pointer-events-none absolute inset-x-0 top-[55%] bottom-0 bg-linear-to-b from-transparent to-[#0f130fa6]" aria-hidden="true"></div>
+    </div>
+    <figcaption class="absolute inset-x-5 bottom-5 text-sm text-white">{portfolio.location}</figcaption>
+  </figure>
+</section>
+<div class:list={[wrap, 'flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-y border-line py-5 text-sm leading-[1.6] text-muted']} aria-label="Formación de un vistazo">
+  {portfolio.education.slice(0, 2).map((education) => <p>{education.degree}</p>)}
+</div>

@@ -1,0 +1,14 @@
+---
+import { portfolio } from '../lib/portfolio';
+import { wrap, eyebrow, syntax, button } from '../lib/ui';
+import ExternalLink from './ExternalLink.astro';
+---
+<section id="contacto" class:list={[wrap, 'rounded-[3px] border border-line border-t-2 border-t-accent bg-soft px-[23px] pt-[23px] pb-5 sm:px-[27px] sm:pt-[29px] sm:pb-[23px] md:px-[38px]']} aria-labelledby="contact-title">
+  <div class="flex items-center justify-between gap-[25px]"><p class={eyebrow}>05 / CONTACTO</p></div>
+  <div class="pt-[30px] pb-[35px] sm:pt-[42px] sm:pb-12">
+    <h2 id="contact-title" class="text-[clamp(23px,5.6vw,32px)] leading-[1.25] tracking-[-.04em] sm:text-[clamp(32px,5vw,64px)]">¿Lo <span class={syntax}>construimos?</span></h2>
+    <p class="mt-[22px] mb-6 max-w-lg text-sm leading-[1.8] text-muted">Para hablar de desarrollo, compartir un proyecto o conectar, escríbeme en LinkedIn.</p>
+    <ExternalLink href={portfolio.social.linkedin} class={button}>Hablemos en LinkedIn</ExternalLink>
+  </div>
+  <div class="flex flex-col items-start justify-between gap-2.5 border-t border-line pt-[17px] text-xs text-muted sm:flex-row sm:items-center sm:gap-[25px]"><span>{portfolio.title}</span><ExternalLink href={portfolio.social.github} class="inline-flex min-h-11 items-center hover:underline hover:underline-offset-4">También me encontrarás en GitHub</ExternalLink></div>
+</section>

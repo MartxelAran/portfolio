@@ -1,0 +1,21 @@
+---
+import { portfolio, homeUrl } from '../lib/portfolio';
+import { wrap } from '../lib/ui';
+const navLink = 'relative inline-flex min-h-11 items-center py-2.5 after:absolute after:bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink after:transition-[width] hover:after:w-full aria-[current=location]:after:w-full';
+---
+<a href="#contenido" class="fixed -top-[90px] left-5 z-100 bg-accent px-5 py-2.5 text-on-accent focus:top-3">Saltar al contenido</a>
+<header class:list={[wrap, 'flex min-h-[78px] flex-wrap items-center gap-x-3 gap-y-0 border-b border-line md:min-h-[92px] md:flex-nowrap md:gap-5']}>
+  <a href={homeUrl} aria-label={`${portfolio.name}, inicio`} class="order-1 mr-auto inline-flex items-center py-5 font-mono text-[28px] leading-none font-semibold tracking-[-.06em] md:py-0 md:text-[32px]">
+    <span class="text-keyword">&lt;</span>ma<span class="text-keyword">/&gt;</span><span class="ml-4 hidden border-l border-line pl-4 text-xs font-normal tracking-normal lg:inline">{portfolio.name}</span>
+  </a>
+  <button class="menu-toggle order-3 hidden min-h-11 min-w-11 cursor-pointer items-center gap-2 border-0 bg-transparent py-3 pl-1 text-sm js:max-md:inline-flex" type="button" aria-expanded="false" aria-controls="main-nav" hidden>
+    <span class="menu-label">Menú</span><span class="h-2.5 w-[19px] border-y border-ink transition-transform [[aria-expanded=true]_&]:-rotate-45" aria-hidden="true"></span>
+  </button>
+  <nav id="main-nav" class="main-nav order-4 grid w-full grid-cols-2 items-center gap-x-5 gap-y-2 pb-5 text-sm js:max-md:hidden js:max-md:data-[open=true]:grid md:order-2 md:flex md:w-auto md:gap-5 md:pb-0 md:text-[13px]" data-open="false" aria-label="Navegación principal">
+    <a class={navLink} href={`${homeUrl}#proyectos`}>Proyectos</a>
+    <a class={navLink} href={`${homeUrl}#experiencia`}>Experiencia</a>
+    <a class={navLink} href={`${homeUrl}#sobre-mi`}>Sobre mí</a>
+    <a class={navLink} href={`${homeUrl}#conocimientos`}>Conocimientos</a>
+    <a class="flex min-h-11 items-center justify-between gap-3 rounded-[3px] border border-line px-3 py-[9px] transition-colors hover:border-accent hover:bg-accent hover:text-on-accent" href={`${homeUrl}#contacto`}>Hablemos <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>

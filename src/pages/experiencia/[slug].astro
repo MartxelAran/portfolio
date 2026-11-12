@@ -1,0 +1,46 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import ExternalLink from '../../components/ExternalLink.astro';
+import Tags from '../../components/Tags.astro';
+import { portfolio, homeUrl, experienceUrl, number, url, type Experience } from '../../lib/portfolio';
+import { wrap, eyebrow, mono, textLink, statusDot } from '../../lib/ui';
+
+export const getStaticPaths = (() => portfolio.experiences.map((experience, index) => ({
+  params: { slug: experience.slug },
+  props: { experience, next: portfolio.experiences[(index + 1) % portfolio.experiences.length], index },
+}))) satisfies GetStaticPaths;
+
+interface Props { experience: Experience; next: Experience; index: number; }
+const { experience, next, index } = Astro.props;
+const contentHeading = 'text-[27px] leading-[1.25] tracking-[-.04em] sm:text-[29px]';
+const sidebarLink = 'inline-flex min-h-11 items-center border-b border-line py-2 text-sm text-muted hover:text-ink aria-[current=location]:border-accent-ink aria-[current=location]:text-ink md:-ml-px md:border-b-0 md:border-l-2 md:border-transparent md:py-0 md:pl-[17px] md:hover:border-accent-ink';
+---
+<Layout title={`${experience.company} — ${portfolio.name}`} description={`${experience.role} en ${experience.company}. ${experience.summary}`} detail>
+  <main id="contenido" class={wrap}>
+    <a class:list={[textLink, 'mt-[27px] text-[11px] text-muted sm:mt-10 sm:text-xs']} href={`${homeUrl}#experiencia`}><span aria-hidden="true">←</span> Todas las experiencias</a>
+    <section class="pt-[35px] sm:pt-[55px]" aria-labelledby="detail-title">
+      <p class:list={[eyebrow, 'flex items-center gap-[22px]']}>EXPERIENCIA / {number(index)} {experience.current && <span class="inline-flex items-center gap-[7px] text-[11px] text-accent-ink"><span class={statusDot} aria-hidden="true"></span> ACTUALMENTE</span>}</p>
+      <h1 id="detail-title" class="mt-5 text-[clamp(30px,8.5vw,48px)] leading-[1.2] tracking-[-.045em] wrap-anywhere sm:mt-6 sm:text-[clamp(40px,6vw,80px)]">{experience.company}<span class="text-keyword">_</span></h1>
+      <p class="mt-5 text-[28px] leading-[1.25] tracking-[-.045em] text-muted sm:text-[clamp(25px,3vw,40px)]">{experience.headline.split('\n').map((line, lineIndex) => <>{lineIndex > 0 && <br />}{line}</>)}</p>
+      <div class="mt-[30px] grid grid-cols-1 gap-[18px] border-y border-line py-[25px] sm:mt-[42px] sm:grid-cols-2 sm:gap-[35px] md:grid-cols-[1fr_1.4fr_1fr]">
+        {[['ETAPA', experience.role], ['PERIODO', experience.dates], ['ÁREA', experience.category]].map(([label, value]) => <div class="sm:last:col-span-2 md:last:col-auto"><span class:list={[mono, 'text-xs text-muted']}>{label}</span><p class="mt-1 text-xs sm:mt-[7px]">{value}</p></div>)}
+      </div>
+    </section>
+    <div class="my-[45px] grid grid-cols-1 items-start gap-[35px] md:my-20 md:grid-cols-[180px_minmax(0,1fr)] md:gap-10 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-[75px]">
+      <aside class="case-sidebar md:sticky md:top-10">
+        <p class:list={[eyebrow, 'mb-2.5 md:mb-5']}>EN ESTA EXPERIENCIA</p>
+        <nav class="flex flex-wrap gap-x-[17px] gap-y-2.5 md:flex-col md:gap-2 md:border-l md:border-line" aria-label="Contenido de la experiencia"><a href="#vision" class={sidebarLink}>Visión general</a>{experience.sections.map((section, sectionIndex) => <a href={`#apartado-${sectionIndex + 1}`} class={sidebarLink}>{section.title}</a>)}{experience.stack.length > 0 && <a href="#herramientas" class={sidebarLink}>Tecnologías y áreas</a>}</nav>
+      </aside>
+      <article>
+        <section id="vision"><p class={eyebrow}>EL PUNTO DE PARTIDA</p><h2 class:list={[contentHeading, 'mt-[15px]']}>{experience.category}</h2><p class="mt-5 text-[15px] leading-[1.85] text-muted sm:text-[17px]">{experience.overview}</p>
+          {experience.document && <a href={url(encodeURIComponent(experience.document.path))} hreflang="eu" type="application/pdf" target="_blank" rel="noopener noreferrer" class={`${textLink} mt-5 underline underline-offset-5`}>{experience.document.label} <span aria-hidden="true">↗</span><span class="sr-only"> (se abre en una pestaña nueva)</span></a>}
+        </section>
+        {experience.sections.map((section, sectionIndex) => <section id={`apartado-${sectionIndex + 1}`} class="mt-7 grid grid-cols-[22px_1fr] gap-3 border-t border-line pt-7 sm:mt-[35px] sm:grid-cols-[35px_1fr] sm:gap-[17px] sm:pt-[33px]"><span class:list={[mono, 'pt-[7px] text-muted']}>{number(sectionIndex)}</span><div><h2 class="text-[25px] leading-[1.25] tracking-[-.04em] sm:text-[29px]">{section.title}</h2><p class="mt-[15px] max-w-[72ch] text-base leading-[1.9] text-muted">{section.text}</p></div></section>)}
+        {experience.stack.length > 0 && <section id="herramientas" class="mt-10 border-t border-line pt-[35px]"><p class={eyebrow}>LA CAJA DE HERRAMIENTAS</p><h2 class:list={[contentHeading, 'mt-3.5']}>Tecnologías y áreas</h2><Tags items={experience.stack} class="mt-5" size="large" /></section>}
+      </article>
+    </div>
+    <a class="next-experience flex flex-col gap-[15px] rounded-[3px] border border-line border-l-2 border-l-accent bg-soft p-[25px] transition-colors hover:bg-accent-soft sm:px-10 sm:py-[35px]" href={experienceUrl(next.slug)}><span class={eyebrow}>SIGUIENTE EXPERIENCIA</span><span class="flex items-center justify-between gap-5 font-mono text-[24px] leading-[1.3] tracking-[-.04em] text-code-type wrap-anywhere sm:text-[clamp(24px,3.6vw,44px)]">{next.company} <span aria-hidden="true">↗</span></span><span class="text-[11px]">{next.role}</span></a>
+    <div class="mt-[30px] flex flex-col items-start justify-between gap-3 border-b border-line pb-[35px] sm:flex-row sm:items-center"><p class="text-[13px]">¿Seguimos la conversación?</p><ExternalLink href={portfolio.social.linkedin} class={textLink}>Conectar en LinkedIn</ExternalLink></div>
+  </main>
+</Layout>

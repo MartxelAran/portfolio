@@ -1,0 +1,15 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { homeUrl, portfolio } from '../../lib/portfolio';
+
+export const getStaticPaths = (() => [
+  { params: { legacy: 'sobre-mi' }, props: { anchor: 'sobre-mi' } },
+  { params: { legacy: 'proyectos' }, props: { anchor: 'proyectos' } },
+  { params: { legacy: 'contacto' }, props: { anchor: 'contacto' } },
+]) satisfies GetStaticPaths;
+
+interface Props { anchor: string; }
+const target = `${homeUrl}#${Astro.props.anchor}`;
+---
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="refresh" content={`0;url=${target}`} /><title>{portfolio.name}</title></head><body><p><a href={target}>Ir al portfolio de {portfolio.name}</a></p></body></html>

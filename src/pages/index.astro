@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Projects from '../components/Projects.astro';
+import ExperienceList from '../components/ExperienceList.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
+import { portfolio } from '../lib/portfolio';
+---
+<Layout title={`${portfolio.name} — Ingeniería & desarrollo web`} description={portfolio.intro}>
+  <main id="contenido">
+    <Hero />
+    <Projects />
+    <ExperienceList />
+    <About />
+    <Skills />
+    <Contact />
+  </main>
+</Layout>

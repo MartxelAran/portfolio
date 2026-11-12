@@ -1,0 +1,17 @@
+---
+import { portfolio } from '../lib/portfolio';
+import { wrap, sectionSpace, syntax, mono } from '../lib/ui';
+import SectionHeading from './SectionHeading.astro';
+import Tags from './Tags.astro';
+---
+<section id="conocimientos" class:list={[wrap, sectionSpace]} aria-labelledby="skills-title">
+  <SectionHeading label="04 / CÓMO PIENSO Y CONSTRUYO" id="skills-title">Visión completa.<br /><span class={syntax}>Atención al detalle.</span><Fragment slot="intro">De los datos a la interfaz.<br />La tecnología al servicio de una buena idea.</Fragment></SectionHeading>
+  <div class="grid grid-cols-1 sm:grid-cols-3">
+    {portfolio.skills.map((skill) => <article class="flex flex-col border-t border-line py-7 last:pb-0 sm:border-t-0 sm:border-l sm:px-[18px] sm:py-0 sm:first:border-l-0 sm:first:pl-0 sm:last:pr-0 md:px-6 lg:px-[35px]">
+      <div class="mb-5 flex items-center justify-between gap-5 sm:mb-7"><span class="grid size-[53px] place-items-center rounded border border-line bg-soft font-mono text-[22px] tracking-[-.1em] text-keyword" aria-hidden="true">{skill.symbol}</span><span class:list={[mono, 'text-muted']}>{skill.number}</span></div>
+      <h3 class="mb-[15px] text-xl leading-[1.4] tracking-[-.035em] lg:text-[22px]">{skill.title}</h3>
+      <p class="pb-5 text-base leading-[1.8] text-muted">{skill.description}</p>
+      <Tags items={skill.tags} class="mt-auto [&_li]:text-xs" />
+    </article>)}
+  </div>
+</section>

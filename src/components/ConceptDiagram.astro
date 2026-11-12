@@ -1,0 +1,17 @@
+---
+import type { Experience } from '../lib/portfolio';
+import { mono } from '../lib/ui';
+interface Props { experience: Experience; }
+const { experience } = Astro.props;
+const labels = experience.slug === 'innguma' ? ['Fuentes', 'Clasificación IA', 'Conocimiento'] : experience.slug === 'mondragon' ? ['Información', 'Oracle', 'Aplicaciones'] : ['Idea', 'Desarrollo', 'Solución'];
+---
+<div class="mt-[35px] rounded-[3px] border border-line bg-soft px-[15px] py-5 text-ink sm:px-7 sm:pt-[27px] sm:pb-[22px]" role="img" aria-label={`Esquema conceptual: ${labels.join(' → ')}`}>
+  <span class="font-mono text-[7px] tracking-[.085em] text-muted uppercase sm:text-[8px]">{experience.category}</span>
+  <div class="flex items-center justify-center gap-[7px] py-[25px] sm:gap-[13px] sm:py-[38px]">{labels.map((label, index) => <>
+    {index > 0 && <span class="text-xs text-keyword sm:text-base" aria-hidden="true">→</span>}
+    <div class:list={['flex min-w-0 flex-1 flex-col gap-2.5 rounded-sm border px-2 py-4 sm:gap-[13px] sm:px-3 sm:py-[22px]', index === 1 ? 'border-accent bg-accent-soft text-ink' : 'border-line bg-paper']}>
+      <span class:list={[mono, 'text-[9px] text-accent-ink']}>0{index + 1}</span><strong class="text-[10px] font-medium sm:text-[13px]">{label}</strong>
+    </div>
+  </>)}</div>
+  <span class="block font-mono text-[6px] tracking-[.085em] text-muted sm:text-[7px]">ESQUEMA CONCEPTUAL · NO REPRESENTA UN SISTEMA REAL</span>
+</div>

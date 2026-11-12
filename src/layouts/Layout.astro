@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { url } from '../lib/portfolio';
+import themeInit from '../scripts/theme-init.js?raw';
+
+interface Props {
+  title: string;
+  description: string;
+  detail?: boolean;
+}
+const { title, description, detail = false } = Astro.props;
+---
+<!doctype html>
+<html lang="es" id="top" data-theme="system" class="scroll-smooth scroll-pt-9 motion-reduce:scroll-auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="icon" href={url('images/favicon.svg')} type="image/svg+xml" />
+    <script is:inline set:html={themeInit}></script>
+  </head>
+  <body class="bg-paper font-mono text-base leading-[1.65] text-ink antialiased selection:bg-accent selection:text-on-accent" data-detail={detail ? 'true' : undefined}>
+    {detail && <div aria-hidden="true" data-reading-progress class="pointer-events-none fixed top-0 left-0 z-50 h-[3px] w-full origin-left scale-x-0 bg-accent"></div>}
+    <Header />
+    <slot />
+    <Footer />
+    <script>
+      import '../scripts/navigation';
+      import '../scripts/theme';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+---
+import { eyebrow, heading } from '../lib/ui';
+interface Props { label: string; id: string; }
+const { label, id } = Astro.props;
+---
+<div class="mb-8 flex flex-col items-start justify-between gap-[18px] sm:mb-12 sm:flex-row sm:gap-5 md:items-end md:gap-[35px]">
+  <div><p class={eyebrow}>{label}</p><h2 id={id} class={heading}><slot /></h2></div>
+  <p class="max-w-full pb-[3px] text-sm leading-[1.85] text-muted sm:max-w-[210px] sm:pt-[37px] sm:text-sm md:max-w-[300px] md:pt-0 md:text-sm"><slot name="intro" /></p>
+</div>

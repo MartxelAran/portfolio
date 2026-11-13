@@ -14,5 +14,10 @@
   root.dataset.theme = preference;
   root.dataset.resolvedTheme = resolved;
   root.classList.add('js');
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', resolved === 'dark' ? '#1e1e1e' : '#ffffff');
+  // La paleta CSS es la fuente de verdad también para el color del navegador.
+  // La elección de modo ya está aplicada antes del primer renderizado.
+  document.addEventListener('DOMContentLoaded', () => {
+    const background = getComputedStyle(root).getPropertyValue('--editor-background').trim();
+    if (background) document.querySelector('meta[name="theme-color"]')?.setAttribute('content', background);
+  }, { once: true });
 })();

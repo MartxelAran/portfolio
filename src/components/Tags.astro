@@ -9,7 +9,7 @@ const { items, class: className, size = 'small' } = Astro.props;
 <ul class:list={['mt-4 flex list-none flex-wrap gap-1.5 p-0', className]}>
   {items.map((item) => (
     <li class:list={[
-      'rounded-[3px] border border-line leading-[1.5] text-muted',
+      'rounded-[3px] border border-line bg-elevated leading-[1.5] text-muted',
       size === 'large' ? 'px-3 py-[7px] text-xs' : 'px-2 py-1 text-[11px]',
     ]}>{item}</li>
   ))}

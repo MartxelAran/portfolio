@@ -21,9 +21,9 @@ const currentExperience = portfolio.experiences.find((experience) => experience.
     <div class="flex items-center justify-between border-b border-line px-4 py-3 text-xs text-muted"><span><span class="mr-2 text-keyword" aria-hidden="true">&#123; &#125;</span>perfil.ts</span><span aria-hidden="true">···</span></div>
     <div class="relative h-85 overflow-hidden sm:h-97.5 lg:h-107.5">
       <img src={url('images/sobre-mi.jpeg')} alt="Martxel Aranzadi, con una ciudad y un fiordo al fondo" width="1368" height="1824" fetchpriority="high" class="h-full w-full origin-[50%_77%] scale-[1.25] object-cover object-[50%_72%] grayscale md:origin-[50%_78%] md:scale-[1.45] md:object-[50%_78%]" />
-      <div class="pointer-events-none absolute inset-x-0 top-[55%] bottom-0 bg-linear-to-b from-transparent to-[#0f130fa6]" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute inset-x-0 top-[55%] bottom-0 bg-linear-to-b from-transparent to-photo-overlay" aria-hidden="true"></div>
     </div>
-    <figcaption class="absolute inset-x-5 bottom-5 text-sm text-white">{portfolio.location}</figcaption>
+    <figcaption class="absolute inset-x-5 bottom-5 text-sm text-photo-caption">{portfolio.location}</figcaption>
   </figure>
 </section>
 <div class:list={[wrap, 'flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-y border-line py-5 text-sm leading-[1.6] text-muted']} aria-label="Formación de un vistazo">

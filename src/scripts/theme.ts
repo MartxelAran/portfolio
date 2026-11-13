@@ -10,9 +10,10 @@ const applyTheme = () => {
   const resolved = preference === 'system' ? (systemTheme.matches ? 'dark' : 'light') : preference;
   root.dataset.theme = preference;
   root.dataset.resolvedTheme = resolved;
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', resolved === 'dark' ? '#1e1e1e' : '#ffffff');
+  const background = getComputedStyle(root).getPropertyValue('--editor-background').trim();
+  if (background) document.querySelector('meta[name="theme-color"]')?.setAttribute('content', background);
   choices.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === preference)));
-  document.querySelectorAll('[data-theme-name]').forEach((label) => { label.textContent = resolved === 'dark' ? 'Dark+' : 'Light+'; });
+  document.querySelectorAll('[data-theme-name]').forEach((label) => { label.textContent = resolved === 'dark' ? 'Eclipse oscuro' : 'Eclipse claro'; });
 };
 
 choices.forEach((button) => button.addEventListener('click', () => {

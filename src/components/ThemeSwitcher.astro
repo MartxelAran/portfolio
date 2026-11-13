@@ -1,11 +1,11 @@
 ---
 const modes = [
-  { value: 'light', label: 'Claro', title: 'Usar modo claro · Light+' },
-  { value: 'dark', label: 'Oscuro', title: 'Usar modo oscuro · Dark+' },
+  { value: 'light', label: 'Claro', title: 'Usar modo claro · Eclipse' },
+  { value: 'dark', label: 'Oscuro', title: 'Usar modo oscuro · Eclipse' },
   { value: 'system', label: 'Sistema', title: 'Seguir la apariencia del sistema' },
 ];
 ---
-<div class="hidden w-fit max-w-full shrink-0 items-center gap-1 rounded border border-line bg-soft p-1 js:flex" role="group" aria-labelledby="appearance-title">
+<div class="hidden w-fit max-w-full shrink-0 items-center gap-1 rounded border border-control-border bg-soft p-1 js:flex" role="group" aria-labelledby="appearance-title">
   {modes.map((mode) => (
     <button type="button" data-theme-choice={mode.value} aria-pressed={mode.value === 'system' ? 'true' : 'false'} aria-label={mode.title} title={mode.title} class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center gap-1.5 rounded-[2px] px-2 text-[11px] text-muted transition-colors hover:bg-accent-soft hover:text-ink focus-visible:outline-offset-2 aria-pressed:bg-accent aria-pressed:text-on-accent sm:px-3">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

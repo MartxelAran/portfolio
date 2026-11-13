@@ -81,7 +81,8 @@ La revisión del 12 de noviembre de 2026 abarca los nueve repositorios públicos
 - `src/pages/proyectos/[slug].astro`: páginas de proyecto con contexto, aportación, tecnologías por categorías, flujo funcional y enlaces a documentación, código o demo.
 - `src/pages/templates/[legacy].astro`: redirecciones de las direcciones antiguas.
 - `src/lib/ui.ts`: grupos de utilidades Tailwind compartidas para botones, títulos y contenedores.
-- `src/styles/global.css`: importación de Tailwind, paletas claro/oscuro, tipografía, breakpoints y reglas base mínimas. Los componentes usan los mismos colores semánticos de Tailwind en ambos modos.
+- `src/styles/editor-palette.css`: fuente única de las paletas inspiradas en Eclipse claro y oscuro. Los valores de ambas paletas se definen juntos y los modos solo seleccionan sus referencias.
+- `src/styles/global.css`: importación de Tailwind y de la paleta, correspondencia de colores semánticos, tipografía, breakpoints y reglas base mínimas.
 - `src/lib/portfolio.ts`: tipos del contenido y construcción de URLs.
 - `src/scripts/navigation.ts`: menú móvil, navegación activa y barra de lectura.
 - `src/components/ThemeSwitcher.astro`: selector de modo claro, oscuro y sistema, integrado en la sección «Apariencia» del pie de página.
@@ -95,14 +96,18 @@ Astro genera los archivos HTML dentro de `dist/`. No edites los archivos compila
 
 ## Apariencia de editor
 
-El diseño toma como referencia los temas clásicos **Light+** y **Dark+** de VS Code: fondo blanco o `#1e1e1e`, paneles neutros, azul `#007acc` y acentos de sintaxis. Los valores de referencia están en los temas de Microsoft: [base clara](https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/light_vs.json), [base oscura](https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_vs.json), [Light+](https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/light_plus.json) y [Dark+](https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json). La jerarquía y la composición están adaptadas a la lectura de un portfolio.
+El diseño se inspira en **Eclipse JDT**: el modo claro combina blanco, palabras clave burdeos, cadenas azules y comentarios verdes; el oscuro combina gris carbón, palabras clave naranjas, cadenas verde turquesa y tipos azules. Las referencias originales son los [colores clásicos de Java](https://github.com/eclipse-jdt/eclipse.jdt.ui/blob/master/org.eclipse.jdt.ui/ui/org/eclipse/jdt/internal/ui/JavaUIPreferenceInitializer.java) y la [sintaxis del tema oscuro](https://github.com/eclipse-jdt/eclipse.jdt.ui/blob/master/org.eclipse.jdt.ui/css/e4-dark_jdt_syntaxhighlighting.css). Es una adaptación para la web: se ajustan algunos tonos, especialmente comentarios, tipos y palabras clave oscuras, para conservar el contraste del texto pequeño.
+
+La paleta separa fondo de editor, panel, superficie elevada, borde decorativo, borde de control, hover, selección, enlace, foco y acción principal. La barra inferior usa una superficie neutra; los botones activos usan burdeos en claro y naranja tostado en oscuro. Los números de los flujos se muestran sobre el fondo base para conservar el contraste de la sintaxis en modo claro.
+
+Para cambiar los colores, edita las parejas `--palette-…-light` y `--palette-…-dark` en `src/styles/editor-palette.css`. Las utilidades Tailwind (`bg-paper`, `bg-soft`, `bg-elevated`, `bg-hover`, `text-ink`, `text-code-number`, etc.) se conectan a esas variables desde `global.css`. El color de la barra del navegador también se obtiene de la paleta CSS, sin duplicar valores hexadecimales en los scripts de tema.
 
 La tipografía utiliza **Consolas**, con alternativas monoespaciadas locales (Cascadia Code, Menlo, Monaco y Liberation Mono) según el dispositivo. No se descargan fuentes externas. Consolas también es la primera fuente de la [configuración predeterminada del editor en Windows](https://github.com/microsoft/vscode/blob/main/src/vs/editor/common/config/fontInfo.ts).
 
 El selector del pie de página, bajo el título **Apariencia**, ofrece:
 
-- **Claro:** fija la apariencia Light+.
-- **Oscuro:** fija la apariencia Dark+.
+- **Claro:** fija la paleta inspirada en Eclipse clásico.
+- **Oscuro:** fija la paleta inspirada en Eclipse oscuro.
 - **Sistema:** sigue `prefers-color-scheme` y sus cambios en tiempo real. Es la opción inicial.
 
 La elección se guarda en `localStorage` con la clave `portfolio-theme`, se conserva al navegar y se sincroniza entre pestañas. Si se bloquea el almacenamiento, los botones siguen cambiando el aspecto de la página. Sin JavaScript, la web sigue automáticamente la apariencia del sistema y muestra la navegación completa.

@@ -75,7 +75,7 @@ const sections = [
           <p class={eyebrow}>FLUJO DEL PROYECTO</p>
           <h2 id="flow-title" class:list={[contentHeading, 'mt-4']}>{project.workflowTitle}</h2>
           <ol class="mt-6 grid gap-4 sm:grid-cols-2">
-            {project.workflow.map((step, stepIndex) => <li class="flex items-start gap-3 rounded border border-line bg-soft p-4"><span class:list={[mono, 'pt-0.5 text-code-type']}>{number(stepIndex)}</span><p class="text-sm leading-[1.8]">{step}</p></li>)}
+            {project.workflow.map((step, stepIndex) => <li class="flex items-start gap-3 rounded border border-line bg-soft p-4"><span class:list={[mono, 'rounded bg-paper px-1.5 py-0.5 text-code-number']}>{number(stepIndex)}</span><p class="text-sm leading-[1.8]">{step}</p></li>)}
           </ol>
           <p class="mt-4 text-xs leading-relaxed text-muted">{project.workflowCaption}</p>
         </section>

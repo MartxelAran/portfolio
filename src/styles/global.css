@@ -1,21 +1,31 @@
 @import "tailwindcss";
+@import "./editor-palette.css";
 
 @theme inline {
   --color-paper: var(--editor-background);
   --color-ink: var(--editor-foreground);
   --color-muted: var(--editor-muted);
   --color-line: var(--editor-border);
-  --color-accent: #007acc;
-  --color-accent-hover: #0062a3;
-  --color-on-accent: #ffffff;
+  --color-accent: var(--editor-accent);
+  --color-accent-hover: var(--editor-accent-hover);
+  --color-on-accent: var(--palette-on-accent);
   --color-accent-ink: var(--editor-link);
   --color-accent-soft: var(--editor-selection);
   --color-soft: var(--editor-panel);
+  --color-elevated: var(--editor-elevated);
+  --color-hover: var(--editor-hover);
+  --color-control-border: var(--editor-control-border);
+  --color-focus: var(--editor-focus);
+  --color-status: var(--editor-panel);
+  --color-status-ink: var(--editor-foreground);
+  --color-photo-caption: var(--palette-photo-caption);
+  --color-photo-overlay: var(--palette-photo-overlay);
   --color-keyword: var(--syntax-keyword);
   --color-code-type: var(--syntax-type);
   --color-code-function: var(--syntax-function);
   --color-code-string: var(--syntax-string);
   --color-code-comment: var(--syntax-comment);
+  --color-code-number: var(--syntax-number);
   --font-sans: Consolas, "Cascadia Code", Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
   --font-display: Consolas, "Cascadia Code", Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
   --font-mono: Consolas, "Cascadia Code", Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
@@ -31,59 +41,8 @@
 @custom-variant js (&:where(.js, .js *));
 
 @layer base {
-  /* Bases de Light+ y Dark+ de VS Code, compartidas con las utilidades de Tailwind. */
-  :root {
-    color-scheme: light;
-    --editor-background: #ffffff;
-    --editor-foreground: #000000;
-    --editor-muted: #616161;
-    --editor-border: #d4d4d4;
-    --editor-panel: #f3f3f3;
-    --editor-link: #006ab1;
-    --editor-selection: #e5ebf1;
-    --syntax-keyword: #0000ff;
-    --syntax-type: #226e85;
-    --syntax-function: #795e26;
-    --syntax-string: #a31515;
-    --syntax-comment: #008000;
-  }
-
-  :root[data-theme="dark"] {
-    color-scheme: dark;
-    --editor-background: #1e1e1e;
-    --editor-foreground: #d4d4d4;
-    --editor-muted: #a6a6a6;
-    --editor-border: #3e3e42;
-    --editor-panel: #252526;
-    --editor-link: #569cd6;
-    --editor-selection: #264f78;
-    --syntax-keyword: #569cd6;
-    --syntax-type: #4ec9b0;
-    --syntax-function: #dcdcaa;
-    --syntax-string: #ce9178;
-    --syntax-comment: #89b575;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root[data-theme="system"] {
-      color-scheme: dark;
-      --editor-background: #1e1e1e;
-      --editor-foreground: #d4d4d4;
-      --editor-muted: #a6a6a6;
-      --editor-border: #3e3e42;
-      --editor-panel: #252526;
-      --editor-link: #569cd6;
-      --editor-selection: #264f78;
-      --syntax-keyword: #569cd6;
-      --syntax-type: #4ec9b0;
-      --syntax-function: #dcdcaa;
-      --syntax-string: #ce9178;
-      --syntax-comment: #89b575;
-    }
-  }
-
   a, button {
-    @apply focus-visible:outline-3 focus-visible:outline-offset-6 focus-visible:outline-accent-ink;
+    @apply focus-visible:outline-3 focus-visible:outline-offset-6 focus-visible:outline-focus;
     -webkit-tap-highlight-color: transparent;
   }
 

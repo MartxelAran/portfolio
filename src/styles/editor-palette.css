@@ -1,0 +1,100 @@
+/* Inspirada en Eclipse JDT clásico y su tema oscuro.
+   Sintaxis de referencia: JavaUIPreferenceInitializer.java y e4-dark_jdt_syntaxhighlighting.css.
+   Algunos tonos se ajustan para mantener contraste en texto pequeño y paneles web.
+   Cada valor se define una sola vez; los modos cambian únicamente referencias. */
+@layer base {
+  :root {
+    --palette-background-light: #ffffff; --palette-background-dark: #2f2f2f;
+    --palette-foreground-light: #242424; --palette-foreground-dark: #d9e8f7;
+    --palette-muted-light: #606568; --palette-muted-dark: #a9b0b5;
+    --palette-border-light: #dedfe2; --palette-border-dark: #484c4f;
+    --palette-control-border-light: #a1a4a8; --palette-control-border-dark: #797f83;
+    --palette-panel-light: #f3f3f5; --palette-panel-dark: #25282a;
+    --palette-elevated-light: #ffffff; --palette-elevated-dark: #34393d;
+    --palette-hover-light: #eeebf1; --palette-hover-dark: #3b3f42;
+    --palette-accent-light: #7f0055; --palette-accent-dark: #a65016;
+    --palette-accent-hover-light: #650044; --palette-accent-hover-dark: #8c4010;
+    --palette-link-light: #3f3fbf; --palette-link-dark: #eaa66b;
+    --palette-selection-light: #e8e0ed; --palette-selection-dark: #464051;
+    --palette-focus-light: #7f0055; --palette-focus-dark: #e0843d;
+    --palette-keyword-light: #7f0055; --palette-keyword-dark: #e0843d;
+    --palette-type-light: #3f5fbf; --palette-type-dark: #47acda;
+    --palette-function-light: #34743a; --palette-function-dark: #a7ec21;
+    --palette-string-light: #2a00ff; --palette-string-dark: #17c6a3;
+    --palette-comment-light: #3f7f5f; --palette-comment-dark: #aaaaaa;
+    --palette-number-light: #3f5fbf; --palette-number-dark: #83b5dc;
+    --palette-on-accent: #ffffff;
+    --palette-photo-caption: #ffffff;
+    --palette-photo-overlay: #000000bf;
+
+    color-scheme: light;
+    --editor-background: var(--palette-background-light);
+    --editor-foreground: var(--palette-foreground-light);
+    --editor-muted: var(--palette-muted-light);
+    --editor-border: var(--palette-border-light);
+    --editor-control-border: var(--palette-control-border-light);
+    --editor-panel: var(--palette-panel-light);
+    --editor-elevated: var(--palette-elevated-light);
+    --editor-hover: var(--palette-hover-light);
+    --editor-accent: var(--palette-accent-light);
+    --editor-accent-hover: var(--palette-accent-hover-light);
+    --editor-link: var(--palette-link-light);
+    --editor-selection: var(--palette-selection-light);
+    --editor-focus: var(--palette-focus-light);
+    --syntax-keyword: var(--palette-keyword-light);
+    --syntax-type: var(--palette-type-light);
+    --syntax-function: var(--palette-function-light);
+    --syntax-string: var(--palette-string-light);
+    --syntax-comment: var(--palette-comment-light);
+    --syntax-number: var(--palette-number-light);
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --editor-background: var(--palette-background-dark);
+    --editor-foreground: var(--palette-foreground-dark);
+    --editor-muted: var(--palette-muted-dark);
+    --editor-border: var(--palette-border-dark);
+    --editor-control-border: var(--palette-control-border-dark);
+    --editor-panel: var(--palette-panel-dark);
+    --editor-elevated: var(--palette-elevated-dark);
+    --editor-hover: var(--palette-hover-dark);
+    --editor-accent: var(--palette-accent-dark);
+    --editor-accent-hover: var(--palette-accent-hover-dark);
+    --editor-link: var(--palette-link-dark);
+    --editor-selection: var(--palette-selection-dark);
+    --editor-focus: var(--palette-focus-dark);
+    --syntax-keyword: var(--palette-keyword-dark);
+    --syntax-type: var(--palette-type-dark);
+    --syntax-function: var(--palette-function-dark);
+    --syntax-string: var(--palette-string-dark);
+    --syntax-comment: var(--palette-comment-dark);
+    --syntax-number: var(--palette-number-dark);
+  }
+
+  /* Funciona también sin JavaScript cuando se sigue la apariencia del sistema. */
+  @media (prefers-color-scheme: dark) {
+    :root[data-theme="system"] {
+      color-scheme: dark;
+      --editor-background: var(--palette-background-dark);
+      --editor-foreground: var(--palette-foreground-dark);
+      --editor-muted: var(--palette-muted-dark);
+      --editor-border: var(--palette-border-dark);
+      --editor-control-border: var(--palette-control-border-dark);
+      --editor-panel: var(--palette-panel-dark);
+      --editor-elevated: var(--palette-elevated-dark);
+      --editor-hover: var(--palette-hover-dark);
+      --editor-accent: var(--palette-accent-dark);
+      --editor-accent-hover: var(--palette-accent-hover-dark);
+      --editor-link: var(--palette-link-dark);
+      --editor-selection: var(--palette-selection-dark);
+      --editor-focus: var(--palette-focus-dark);
+      --syntax-keyword: var(--palette-keyword-dark);
+      --syntax-type: var(--palette-type-dark);
+      --syntax-function: var(--palette-function-dark);
+      --syntax-string: var(--palette-string-dark);
+      --syntax-comment: var(--palette-comment-dark);
+      --syntax-number: var(--palette-number-dark);
+    }
+  }
+}

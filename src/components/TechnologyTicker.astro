@@ -1,9 +1,9 @@
 ---
 import { portfolio } from '../lib/portfolio';
 ---
-<section class="group/tech w-full min-w-0 rounded border border-line bg-soft" aria-labelledby="technology-ticker-title">
-  <div class="flex items-center justify-between gap-2 border-b border-line py-1 pr-1 pl-4">
-    <h2 id="technology-ticker-title" class="text-xs text-muted"><span class="mr-2 text-keyword" aria-hidden="true">[]</span>Mi stack</h2>
+<section class="group/tech w-full min-w-0 border-y border-line py-3 sm:py-4" aria-labelledby="technology-ticker-title">
+  <div class="flex items-center justify-between gap-4">
+    <h2 id="technology-ticker-title" class="text-xs tracking-[.06em] text-muted">MI STACK</h2>
     <label class="relative inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center gap-2 rounded px-2 text-[11px] text-muted hover:bg-hover hover:text-ink has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-focus motion-reduce:hidden">
       <input type="checkbox" class="peer sr-only" aria-label="Pausar el movimiento de las tecnologías" />
       <svg class="peer-checked:hidden" width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 3h3v10H4zm5 0h3v10H9z" /></svg>
@@ -11,11 +11,11 @@ import { portfolio } from '../lib/portfolio';
       <span class="peer-checked:hidden" aria-hidden="true">Pausar</span><span class="hidden peer-checked:inline" aria-hidden="true">Reanudar</span>
     </label>
   </div>
-  <div class="overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_16px,black_calc(100%_-_16px),transparent)] motion-reduce:px-4 motion-reduce:mask-none">
+  <div class="overflow-hidden pt-2 pb-1 [mask-image:linear-gradient(to_right,transparent,black_16px,black_calc(100%_-_16px),transparent)] motion-reduce:mask-none">
     <div class="flex w-max animate-tech-scroll group-hover/tech:[animation-play-state:paused] group-focus-within/tech:[animation-play-state:paused] group-has-checked/tech:[animation-play-state:paused] motion-reduce:w-full">
       {[false, true].map((duplicate) => (
-        <ul aria-label={duplicate ? undefined : 'Lenguajes y tecnologías'} aria-hidden={duplicate ? 'true' : undefined} class:list={['flex shrink-0 items-center gap-3 pr-3 motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:pr-0', duplicate && 'motion-reduce:hidden']}>
-          {portfolio.featuredTechnologies.map((technology) => <li class="inline-flex min-h-9 shrink-0 items-center gap-2 whitespace-nowrap rounded border border-line bg-elevated px-3 text-xs text-ink"><span class="text-code-type" aria-hidden="true">#</span>{technology}</li>)}
+        <ul aria-label={duplicate ? undefined : 'Lenguajes y tecnologías'} aria-hidden={duplicate ? 'true' : undefined} class:list={['flex shrink-0 items-center motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:gap-y-2', duplicate && 'motion-reduce:hidden']}>
+          {portfolio.featuredTechnologies.map((technology) => <li class="inline-flex min-h-10 shrink-0 items-center gap-6 whitespace-nowrap pr-6 text-sm text-ink sm:gap-8 sm:pr-8 sm:text-base"><span>{technology}</span><span class="text-code-type" aria-hidden="true">/</span></li>)}
         </ul>
       ))}
     </div>

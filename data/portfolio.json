@@ -3,7 +3,7 @@
   "fullName": "Martxel Aranzadi Olazabal",
   "age": 25,
   "title": "Software developer & full stack",
-  "featuredTechnologies": ["Python", "JavaScript", "SQL", "React", "FastAPI", "PostgreSQL", "Next.js", "Tailwind CSS", "Docker", "RQ", "SeaweedFS", "Apache Airflow", "MySQL", "Java"],
+  "featuredTechnologies": ["Python", "JavaScript", "SQL", "React", "FastAPI", "PostgreSQL", "Next.js", "Tailwind CSS", "Docker", "RQ", "SeaweedFS", "Apache Airflow", "MySQL", "Java", "Flask", "Spring Boot", "Oracle", "pandas", "Pytest", "Git", "Docker Compose", "C#", "C++", "MongoDB", "Hibernate", "Spring Framework", "GitLab", "GitHub", "HTML", "JWT"],
   "location": "Madrid, España",
   "intro": "Me gusta construir soluciones completas: entender qué necesita un proyecto, elegir las tecnologías adecuadas y conectarlas para que funcionen juntas. En equipos pequeños he ido más allá del desarrollo web o full stack, moviéndome entre distintas capas según cada reto.",
   "about": [
@@ -294,6 +294,11 @@
       ]
     },
     "sources": [
+      {
+        "source": "PDF de aptitudes de LinkedIn aportado por Martxel: (14) Martxel Aranzadi Olazabal _ LinkedIn.pdf",
+        "checkedOn": "2026-11-16",
+        "supports": "Páginas 1–3: React.js, Apache Airflow, FastAPI, SQL, JSON Web Token (JWT), prueba unitaria, Docker, inteligencia artificial, Hibernate, Spring Framework, programación orientada a objetos, Java, CI/CD, GitLab, GitHub, Git, MongoDB, C#, C++, Python, JavaScript y HTML. Son aptitudes declaradas; no se deduce un nivel experto ni se atribuyen todas al empleo actual. El PDF original se conserva fuera de los recursos públicos."
+      },
       {
         "source": "Fecha de incorporación confirmada por Martxel el 16 de noviembre de 2026",
         "supports": "Inicio de la etapa actual en Arfima en octubre de 2024."

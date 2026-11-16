@@ -24,7 +24,7 @@ Las dependencias se utilizan durante el desarrollo y la compilación. El hosting
 ## Editar el contenido
 
 1. Edita **`data/portfolio.json`**: presentación, edad, formación, enlaces, conocimientos y experiencias.
-   La lista `featuredTechnologies` controla la franja animada «Mi stack», que ocupa todo el ancho de la presentación, debajo del texto y la foto. Se puede pausar con el control, el ratón o el foco del teclado; con movimiento reducido se muestra completa y estática.
+   Los estudios de `education` se muestran en la sección «Sobre mí». La lista `featuredTechnologies` controla la franja «Mi stack», debajo de la presentación y a todo el ancho, con nombres separados por barras y desplazamiento continuo. Se puede pausar con el control, el ratón o el foco del teclado; con movimiento reducido se muestra completa y estática.
 2. El servidor de desarrollo refleja los cambios automáticamente.
 3. Para publicar, ejecuta **`npm run build`** y utiliza el contenido de `dist/`.
 
@@ -47,6 +47,8 @@ El contenido se ha completado con la vista pública indexada de [LinkedIn](https
 El campo `_editorial` en `data/portfolio.json` registra qué respalda cada fuente y qué queda por confirmar; no se muestra en la web. El 16 de noviembre de 2026 Martxel confirmó su incorporación en Arfima en octubre de 2024 y su trabajo en el desarrollo de Alpha-Klima: React, FastAPI, PostgreSQL, RQ, SeaweedFS compatible con S3 e integración de dos librerías para riesgo climático y métricas financieras. El contexto del producto se contrastó con su [página de plataforma](https://alpha-klima.com/platform/). No se atribuye la autoría de los modelos ni se añaden cifras de impacto. Siguen pendientes el cargo contractual y la cuarta experiencia sin identificar. El periodo 2019–2024 se ha asociado al grado por el orden de los estudios en la vista indexada y por la titulación corroborada en Alpha-Klima; esta asociación es una inferencia pendiente de confirmar.
 
 Los idiomas conservan los niveles publicados en LinkedIn. Las tecnologías de los proyectos académicos se documentan en sus respectivos casos de estudio. La experiencia en Mondragon conserva la descripción basada en el portfolio original.
+
+El PDF de aptitudes de LinkedIn aportado por Martxel el 16 de noviembre de 2026 recoge 22 aptitudes en sus páginas 1–3. Se ha registrado como fuente en `_editorial`; las aptitudes declaradas no se convierten en niveles de dominio ni se atribuyen automáticamente al puesto actual. El PDF se mantiene fuera de los recursos públicos. La franja incluye también Flask, Spring Boot, Oracle, pandas, Pytest, Git y Docker Compose, seleccionadas a partir de los proyectos y añadidas a petición de su autor.
 
 La memoria del TFM se ha leído desde `public/MiW.TFM.Memoria.Plantilla Martxel.docx`, aportada por su autor; no se ha descargado el PDF restringido al campus. Los apartados 2.1–2.5 y 5.2–5.6 respaldan React, MUI, react-toastify, Python, FastAPI, Pydantic, OpenAPI/Swagger, GitLab OAuth2, PostgreSQL, pandas, Apache Airflow, MinIO, Docker y Docker Compose. Vitest y Pytest constan en 5.4 y Postman en 1.7.1. Las tecnologías se dividen en las mismas categorías y con el mismo diseño que en el TFG. Vite, ESLint y TypeScript se mencionan como posibilidades del ecosistema, sin confirmar su uso; MinIO no se presenta como un despliegue en AWS. Las herramientas generales de edición y consulta (Visual Studio Code y DataGrip) están registradas en `_editorial`.
 

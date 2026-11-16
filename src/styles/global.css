@@ -32,7 +32,7 @@
 }
 
 @theme {
-  --animate-tech-scroll: tech-scroll 55s linear infinite;
+  --animate-tech-scroll: tech-scroll 100s linear infinite;
 
   @keyframes tech-scroll {
     to { transform: translateX(-50%); }

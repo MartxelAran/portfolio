@@ -28,8 +28,7 @@ const currentExperience = portfolio.experiences.find((experience) => experience.
     </div>
     <figcaption class="absolute inset-x-5 bottom-5 text-sm text-photo-caption">{portfolio.location}</figcaption>
   </figure>
-  <div class="min-w-0 md:col-span-2"><TechnologyTicker /></div>
+  <div class="min-w-0 md:col-span-2">
+    <TechnologyTicker />
+  </div>
 </section>
-<div class:list={[wrap, 'flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-y border-line py-5 text-sm leading-[1.6] text-muted']} aria-label="Formación de un vistazo">
-  {portfolio.education.slice(0, 2).map((education) => <p>{education.degree}</p>)}
-</div>

@@ -43,7 +43,7 @@ Los cuerpos principales usan 14–18 px, los enlaces principales tienen una altu
 
 El contenido se ha completado con la vista pública indexada de [LinkedIn](https://es.linkedin.com/in/martxel-aranzadi-olazabal), la ficha del equipo de [Alpha-Klima](https://alpha-klima.com/about/), el resumen público del [TFM en la UPM](https://oa.upm.es/90280/) y las memorias del TFG y TFM aportadas por el usuario, además de la información del portfolio original.
 
-El campo `_editorial` en `data/portfolio.json` registra qué respalda cada fuente y qué queda por confirmar; no se muestra en la web. LinkedIn bloquea la consulta directa y oculta buena parte de las experiencias: no se han inventado el cargo contractual, la fecha de incorporación, las responsabilidades ni el stack de Arfima, ni la cuarta experiencia sin identificar. El periodo 2019–2024 se ha asociado al grado por el orden de los estudios en la vista indexada y por la titulación corroborada en Alpha-Klima; esta asociación es una inferencia pendiente de confirmar.
+El campo `_editorial` en `data/portfolio.json` registra qué respalda cada fuente y qué queda por confirmar; no se muestra en la web. El 16 de noviembre de 2026 Martxel confirmó su trabajo en el desarrollo de Alpha-Klima: React, FastAPI, PostgreSQL, RQ, SeaweedFS compatible con S3 e integración de dos librerías para riesgo climático y métricas financieras. El contexto del producto se contrastó con su [página de plataforma](https://alpha-klima.com/platform/). No se atribuye la autoría de los modelos ni se añaden cifras de impacto. Siguen pendientes el cargo contractual, la fecha de incorporación y la cuarta experiencia sin identificar. El periodo 2019–2024 se ha asociado al grado por el orden de los estudios en la vista indexada y por la titulación corroborada en Alpha-Klima; esta asociación es una inferencia pendiente de confirmar.
 
 Los idiomas conservan los niveles publicados en LinkedIn. Las tecnologías de los proyectos académicos se documentan en sus respectivos casos de estudio. La experiencia en Mondragon conserva la descripción basada en el portfolio original.
 
@@ -88,7 +88,8 @@ La revisión del 12 de noviembre de 2026 abarca los nueve repositorios públicos
 - `src/components/ThemeSwitcher.astro`: selector de modo claro, oscuro y sistema, integrado en la sección «Apariencia» del pie de página.
 - `src/scripts/theme-init.js`: aplicación de la preferencia desde `<head>`, antes de mostrar el contenido.
 - `src/scripts/theme.ts`: cambios de modo, seguimiento del sistema y sincronización entre pestañas.
-- `public/images/`: imágenes originales servidas como recursos estáticos.
+- `src/assets/sobre-mi.jpeg`: foto de portada original. Astro genera versiones WebP de distintos tamaños y el navegador elige según la pantalla. Conserva las dimensiones y el encuadre al sustituirla.
+- `public/images/`: imágenes y diagramas servidos como recursos estáticos.
 
 Tailwind se integra con el plugin oficial `@tailwindcss/vite`; no se carga por CDN. No se utiliza un framework de interfaz en el navegador. El contenido y los enlaces están disponibles sin JavaScript; el menú móvil muestra la navegación completa si JavaScript está desactivado.
 

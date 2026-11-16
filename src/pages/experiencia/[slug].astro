@@ -23,6 +23,7 @@ const sidebarLink = 'inline-flex min-h-11 items-center border-b border-line py-2
       <p class:list={[eyebrow, 'flex items-center gap-[22px]']}>EXPERIENCIA / {number(index)} {experience.current && <span class="inline-flex items-center gap-[7px] text-[11px] text-accent-ink"><span class={statusDot} aria-hidden="true"></span> ACTUALMENTE</span>}</p>
       <h1 id="detail-title" class="mt-5 text-[clamp(30px,8.5vw,48px)] leading-[1.2] tracking-[-.045em] wrap-anywhere sm:mt-6 sm:text-[clamp(40px,6vw,80px)]">{experience.company}<span class="text-keyword">_</span></h1>
       <p class="mt-5 text-[28px] leading-[1.25] tracking-[-.045em] text-muted sm:text-[clamp(25px,3vw,40px)]">{experience.headline.split('\n').map((line, lineIndex) => <>{lineIndex > 0 && <br />}{line}</>)}</p>
+      {experience.website && <div class="mt-5"><ExternalLink href={experience.website.url} class={textLink}>{experience.website.label}</ExternalLink></div>}
       <div class="mt-[30px] grid grid-cols-1 gap-[18px] border-y border-line py-[25px] sm:mt-[42px] sm:grid-cols-2 sm:gap-[35px] md:grid-cols-[1fr_1.4fr_1fr]">
         {[['ETAPA', experience.role], ['PERIODO', experience.dates], ['ÁREA', experience.category]].map(([label, value]) => <div class="sm:last:col-span-2 md:last:col-auto"><span class:list={[mono, 'text-xs text-muted']}>{label}</span><p class="mt-1 text-xs sm:mt-[7px]">{value}</p></div>)}
       </div>

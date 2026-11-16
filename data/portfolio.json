@@ -70,12 +70,11 @@
       "number": "03",
       "symbol": "⌘",
       "title": "Integración y producto",
-      "description": "Catálogos multilingües y flujos de análisis con Apache Airflow y pandas, almacenamiento en MinIO y servicios con Docker Compose. En el TFM añadí pruebas de interfaz y API con Vitest y Pytest.",
+      "description": "En Alpha-Klima conecto la plataforma con los motores de riesgo climático y métricas financieras, en un entorno con RQ y almacenamiento SeaweedFS compatible con S3. En el TFM trabajé con Apache Airflow, pandas, MinIO y pruebas con Vitest y Pytest.",
       "tags": [
+        "RQ",
+        "SeaweedFS · S3",
         "Apache Airflow",
-        "pandas",
-        "MinIO",
-        "Docker Compose",
         "Vitest · Pytest"
       ]
     }
@@ -89,25 +88,46 @@
       "dates": "Actualidad · Madrid, España",
       "category": "Ingeniería de software",
       "current": true,
-      "summary": "Mi etapa actual en Madrid, centrada en el desarrollo de software y full stack.",
+      "summary": "Desarrollo full stack de Alpha-Klima, una plataforma web que conecta el análisis de riesgo climático con métricas financieras.",
       "tags": [
-        "Software development",
-        "Full stack",
-        "Madrid"
+        "React",
+        "FastAPI",
+        "PostgreSQL",
+        "RQ"
       ],
-      "headline": "Desarrollo de software.\nAprendizaje continuo.",
-      "overview": "Actualmente trabajo en Arfima Trading, en Madrid. Mi perfil combina desarrollo de software y full stack; además, formo parte del equipo de ingeniería de Alpha-Klima como Software Engineer.",
+      "headline": "Del riesgo climático\na las métricas financieras.",
+      "overview": "En mi etapa actual en Arfima Trading participo como Software Engineer en el desarrollo de Alpha-Klima, una plataforma web de riesgo climático. Mi trabajo conecta la interfaz, el backend, los datos y los procesos de análisis para ofrecer los resultados desde una misma aplicación.",
       "sections": [
         {
-          "title": "El vínculo con Alpha-Klima",
-          "text": "Formo parte del equipo de ingeniería de Alpha-Klima, una iniciativa vinculada a Arfima Financial Services que trabaja en el análisis de riesgo climático desde una perspectiva financiera. Mi perfil dentro del equipo es Software Engineer."
+          "title": "Qué resuelve Alpha-Klima",
+          "text": "Alpha-Klima analiza la exposición de activos y carteras a riesgos climáticos físicos y traduce sus consecuencias en términos financieros. La plataforma permite trabajar con esos análisis desde una interfaz web."
         },
         {
-          "title": "Mi perfil técnico",
-          "text": "Mi especialidad es el desarrollo de software y full stack. Aporto la base adquirida en administración de datos, desarrollo web y proyectos académicos que conectan aplicaciones y datos."
+          "title": "Interfaz, API y datos",
+          "text": "Participo en el desarrollo de la plataforma con un frontend en React y un backend en Python con FastAPI, conectado a PostgreSQL. Mi aportación se centra en conectar estas piezas para que los datos y los análisis puedan utilizarse desde la aplicación web."
+        },
+        {
+          "title": "Automatizaciones y almacenamiento",
+          "text": "La plataforma utiliza RQ para ejecutar tareas automatizadas en segundo plano. El almacenamiento de objetos se realiza con SeaweedFS mediante una interfaz compatible con S3, conectada con el resto de los servicios de la aplicación."
+        },
+        {
+          "title": "Integración de los motores de análisis",
+          "text": "El backend hace peticiones a dos librerías: una calcula los riesgos climáticos y otra analiza esos riesgos para convertirlos en métricas financieras. Mi trabajo en la plataforma integra estos motores con la API, los datos y la interfaz."
         }
       ],
-      "stack": []
+      "stack": [
+        "React",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "RQ",
+        "SeaweedFS",
+        "S3 compatible"
+      ],
+      "website": {
+        "url": "https://alpha-klima.com/",
+        "label": "Conocer la plataforma Alpha-Klima"
+      }
     },
     {
       "slug": "innguma",
@@ -190,7 +210,7 @@
     }
   ],
   "_editorial": {
-    "checkedOn": "2026-11-12",
+    "checkedOn": "2026-11-16",
     "githubReview": {
       "checkedOn": "2026-11-12",
       "profile": "https://github.com/MartxelAran",
@@ -204,22 +224,84 @@
         "Distinguir proyectos completos, colaboraciones, ejercicios y plantillas. Las estrellas no determinan la selección."
       ],
       "repositories": [
-        { "url": "https://github.com/MartxelAran/PizzaPerTutti", "selected": true, "branch": "main", "treeSha": "5241ba3ffab08782d076f0b2026a923963804c6a", "reason": "Web pública verificable y resultado visual concreto para un negocio local; Astro, Tailwind CSS y carta desde JSON.", "limitations": "README de inicio de Astro. No se atribuyen pedidos ni pagos online. El repositorio registra contribuciones de MartxelAran y arfima-maranzadi; no se ha verificado por separado la identidad de la segunda cuenta." },
-        { "url": "https://github.com/MartxelAran/SoundBeats", "selected": true, "branch": "main", "treeSha": "cee14fd6a66dd6238a281a878cfab1d984de6357", "reason": "Proyecto colaborativo con flujo de consultas y audios, Spring Boot, RabbitMQ y pruebas Java.", "limitations": "README de una línea. Existen pruebas básicas y mocks; no se afirma cobertura exhaustiva ni pipelines verdes. El consumidor RabbitMQ espera con CountDownLatch.await(); no se presenta como no bloqueante. No se atribuye un modelo de IA propio ni validación clínica." },
-        { "url": "https://github.com/MartxelAran/TiendaPeliculasNet", "selected": true, "branch": "master", "treeSha": "85eacd51fc1a7fc02c19a319ab84b587ca58ba9f", "reason": "Flujo de catálogo, carrito, pedidos, stock y administración; amplía el portfolio con C#, ASP.NET MVC y SQL Server.", "limitations": "Sin README, pruebas ni CI detectados en el árbol revisado. No hay pasarela de pago ni demostración pública verificada. Usa .NET Framework 4.7.2, no .NET Core. Los cambios de stock se guardan por artículo; no se presenta como tienda preparada para producción." },
-        { "url": "https://github.com/MartxelAran/Tenis", "selected": false, "reason": "Proyecto de equipo con diagramas y diseño orientado a objetos, pero de menor alcance funcional y presentación por consola." },
-        { "url": "https://github.com/MartxelAran/iwvg-devops-aranzadi-martxel", "selected": false, "reason": "Ejercicio sobre una plantilla docente con pruebas y CI; aporta menos recorrido de producto que los seleccionados." },
-        { "url": "https://github.com/MartxelAran/devops1", "selected": false, "reason": "Plantilla docente y ejercicios iniciales de DevOps; poco diferenciador como caso principal." },
-        { "url": "https://github.com/MartxelAran/portfolio", "selected": false, "reason": "Versión anterior del portfolio; no representa los cambios locales actuales de Astro ni añade un caso distinto." },
-        { "url": "https://github.com/MartxelAran/soundbeatsartifact", "selected": false, "reason": "Esqueleto reducido de SoundBeats; duplicaría un proyecto cuya implementación más completa está en SoundBeats." },
-        { "url": "https://github.com/MartxelAran/repo", "selected": false, "reason": "Ejercicios de búsqueda Pacman y Sudoku sobre material docente; sin README ni presentación de una solución propia completa." }
+        {
+          "url": "https://github.com/MartxelAran/PizzaPerTutti",
+          "selected": true,
+          "branch": "main",
+          "treeSha": "5241ba3ffab08782d076f0b2026a923963804c6a",
+          "reason": "Web pública verificable y resultado visual concreto para un negocio local; Astro, Tailwind CSS y carta desde JSON.",
+          "limitations": "README de inicio de Astro. No se atribuyen pedidos ni pagos online. El repositorio registra contribuciones de MartxelAran y arfima-maranzadi; no se ha verificado por separado la identidad de la segunda cuenta."
+        },
+        {
+          "url": "https://github.com/MartxelAran/SoundBeats",
+          "selected": true,
+          "branch": "main",
+          "treeSha": "cee14fd6a66dd6238a281a878cfab1d984de6357",
+          "reason": "Proyecto colaborativo con flujo de consultas y audios, Spring Boot, RabbitMQ y pruebas Java.",
+          "limitations": "README de una línea. Existen pruebas básicas y mocks; no se afirma cobertura exhaustiva ni pipelines verdes. El consumidor RabbitMQ espera con CountDownLatch.await(); no se presenta como no bloqueante. No se atribuye un modelo de IA propio ni validación clínica."
+        },
+        {
+          "url": "https://github.com/MartxelAran/TiendaPeliculasNet",
+          "selected": true,
+          "branch": "master",
+          "treeSha": "85eacd51fc1a7fc02c19a319ab84b587ca58ba9f",
+          "reason": "Flujo de catálogo, carrito, pedidos, stock y administración; amplía el portfolio con C#, ASP.NET MVC y SQL Server.",
+          "limitations": "Sin README, pruebas ni CI detectados en el árbol revisado. No hay pasarela de pago ni demostración pública verificada. Usa .NET Framework 4.7.2, no .NET Core. Los cambios de stock se guardan por artículo; no se presenta como tienda preparada para producción."
+        },
+        {
+          "url": "https://github.com/MartxelAran/Tenis",
+          "selected": false,
+          "reason": "Proyecto de equipo con diagramas y diseño orientado a objetos, pero de menor alcance funcional y presentación por consola."
+        },
+        {
+          "url": "https://github.com/MartxelAran/iwvg-devops-aranzadi-martxel",
+          "selected": false,
+          "reason": "Ejercicio sobre una plantilla docente con pruebas y CI; aporta menos recorrido de producto que los seleccionados."
+        },
+        {
+          "url": "https://github.com/MartxelAran/devops1",
+          "selected": false,
+          "reason": "Plantilla docente y ejercicios iniciales de DevOps; poco diferenciador como caso principal."
+        },
+        {
+          "url": "https://github.com/MartxelAran/portfolio",
+          "selected": false,
+          "reason": "Versión anterior del portfolio; no representa los cambios locales actuales de Astro ni añade un caso distinto."
+        },
+        {
+          "url": "https://github.com/MartxelAran/soundbeatsartifact",
+          "selected": false,
+          "reason": "Esqueleto reducido de SoundBeats; duplicaría un proyecto cuya implementación más completa está en SoundBeats."
+        },
+        {
+          "url": "https://github.com/MartxelAran/repo",
+          "selected": false,
+          "reason": "Ejercicios de búsqueda Pacman y Sudoku sobre material docente; sin README ni presentación de una solución propia completa."
+        }
       ],
       "liveChecks": [
-        { "url": "https://pizzapertutti.net/", "status": 200, "title": "Pizza Per Tutti" },
-        { "url": "https://pizzapertutti.net/carta/", "status": 200, "title": "Carta - Pizza Per Tutti" }
+        {
+          "url": "https://pizzapertutti.net/",
+          "status": 200,
+          "title": "Pizza Per Tutti"
+        },
+        {
+          "url": "https://pizzapertutti.net/carta/",
+          "status": 200,
+          "title": "Carta - Pizza Per Tutti"
+        }
       ]
     },
     "sources": [
+      {
+        "source": "Descripción del trabajo actual aportada por Martxel el 16 de noviembre de 2026",
+        "supports": "Desarrollo de la plataforma Alpha-Klima: frontend React, backend FastAPI, PostgreSQL, automatizaciones RQ y almacenamiento SeaweedFS compatible con S3. El backend llama a dos librerías, una de cálculo de riesgo climático y otra de conversión a métricas financieras. No se atribuye la autoría de los modelos científicos o financieros ni se inventan métricas de impacto."
+      },
+      {
+        "url": "https://alpha-klima.com",
+        "checkedOn": "2026-11-16",
+        "supports": "Contexto público del producto: análisis de riesgo climático físico en activos y carteras, y traducción de impactos a métricas financieras. No respalda por sí sola las responsabilidades personales; estas proceden de la descripción del usuario."
+      },
       {
         "url": "https://es.linkedin.com/in/martxel-aranzadi-olazabal",
         "supports": "Desarrollo de software y full stack, Arfima Trading, Madrid, UPM 2024-2025 e idiomas. La consulta directa devuelve un bloqueo 999; se utiliza la vista indexada. El periodo 2019-2024 del segundo registro educativo se ha asociado al grado por su orden y por la titulación corroborada en Alpha-Klima: es una inferencia que conviene confirmar."
@@ -246,7 +328,7 @@
       }
     ],
     "pending": [
-      "Cargo contractual, fecha de incorporación, proyectos, responsabilidades y tecnologías en Arfima Trading.",
+      "Cargo contractual y fecha de incorporación en Arfima Trading. Las responsabilidades y tecnologías de Alpha-Klima están confirmadas por el usuario el 16 de noviembre de 2026; falta concretar un resultado o mejora individual que pueda compartirse.",
       "Fecha exacta de finalización de la etapa en Innguma; la memoria acredita el curso 2023/2024, pero no fija la fecha laboral.",
       "Institución y periodo exactos del Erasmus en Suecia.",
       "Una cuarta experiencia aparece sin datos identificativos en el LinkedIn público; no se ha añadido una empresa ni un cargo por deducción.",
@@ -428,18 +510,54 @@
       "problem": "Concentrar en una web fácil de consultar desde el móvil la información que necesita alguien antes de hacer un pedido: qué hay en la carta, cuánto cuesta, cuándo abre el local y cómo llamar o llegar.",
       "contribution": "Desarrollé la web con Astro y Tailwind CSS, preparé la carta desde JSON y adapté la navegación a móvil. También rediseñé el logotipo y definí una nueva paleta de colores para dar coherencia a la identidad visual del proyecto. La página reúne información de alérgenos, enlaces de llamada, mapa y un indicador de apertura calculado a partir del horario.",
       "technologyGroups": [
-        { "title": "Interfaz", "items": ["Astro", "Tailwind CSS", "HTML", "TypeScript"] },
-        { "title": "Datos", "items": ["JSON"] },
-        { "title": "Integración y automatización", "items": ["Google Maps", "Enlaces de llamada"] },
-        { "title": "Despliegue", "items": ["GitHub Pages", "GitHub Actions"] },
-        { "title": "Pruebas y herramientas", "items": ["npm", "Git"] }
+        {
+          "title": "Interfaz",
+          "items": [
+            "Astro",
+            "Tailwind CSS",
+            "HTML",
+            "TypeScript"
+          ]
+        },
+        {
+          "title": "Datos",
+          "items": [
+            "JSON"
+          ]
+        },
+        {
+          "title": "Integración y automatización",
+          "items": [
+            "Google Maps",
+            "Enlaces de llamada"
+          ]
+        },
+        {
+          "title": "Despliegue",
+          "items": [
+            "GitHub Pages",
+            "GitHub Actions"
+          ]
+        },
+        {
+          "title": "Pruebas y herramientas",
+          "items": [
+            "npm",
+            "Git"
+          ]
+        }
       ],
       "url": "https://github.com/MartxelAran/PizzaPerTutti",
       "linkLabel": "Ver código en GitHub",
       "demoUrl": "https://pizzapertutti.net/",
       "evidence": "El repositorio contiene los componentes, la carta en JSON y los flujos de publicación. La web y la página de carta están disponibles para explorar el resultado.",
       "workflowTitle": "De la carta al contacto.",
-      "workflow": ["Explorar las pizzas", "Consultar precios y alérgenos", "Comprobar horarios", "Llamar o abrir el mapa"],
+      "workflow": [
+        "Explorar las pizzas",
+        "Consultar precios y alérgenos",
+        "Comprobar horarios",
+        "Llamar o abrir el mapa"
+      ],
       "workflowCaption": "Recorrido disponible en la web de Pizza Per Tutti."
     },
     {
@@ -453,11 +571,47 @@
       "problem": "Conectar en una aplicación el registro de una consulta, la carga de archivos de audio, la recepción de resultados de otro servicio y su revisión posterior.",
       "contribution": "Proyecto de equipo en el que participé. La implementación reúne controladores Spring Boot, vistas Thymeleaf, carga de archivos y gestión de consultas, junto con la integración de RabbitMQ para recibir resultados. El repositorio también incorpora pruebas Java y un flujo de compilación y análisis.",
       "technologyGroups": [
-        { "title": "Interfaz", "items": ["Thymeleaf", "HTML", "CSS"] },
-        { "title": "API y autenticación", "items": ["Java 17", "Spring Boot", "Spring MVC"] },
-        { "title": "Datos", "items": ["MySQL", "JSON", "Gson"] },
-        { "title": "Integración y automatización", "items": ["RabbitMQ", "AMQP"] },
-        { "title": "Pruebas y herramientas", "items": ["JUnit", "Mockito", "JaCoCo", "Maven", "GitHub Actions"] }
+        {
+          "title": "Interfaz",
+          "items": [
+            "Thymeleaf",
+            "HTML",
+            "CSS"
+          ]
+        },
+        {
+          "title": "API y autenticación",
+          "items": [
+            "Java 17",
+            "Spring Boot",
+            "Spring MVC"
+          ]
+        },
+        {
+          "title": "Datos",
+          "items": [
+            "MySQL",
+            "JSON",
+            "Gson"
+          ]
+        },
+        {
+          "title": "Integración y automatización",
+          "items": [
+            "RabbitMQ",
+            "AMQP"
+          ]
+        },
+        {
+          "title": "Pruebas y herramientas",
+          "items": [
+            "JUnit",
+            "Mockito",
+            "JaCoCo",
+            "Maven",
+            "GitHub Actions"
+          ]
+        }
       ],
       "url": "https://github.com/MartxelAran/SoundBeats",
       "linkLabel": "Ver código en GitHub",
@@ -470,7 +624,12 @@
       ],
       "evidence": "El repositorio público incluye los controladores, las vistas, la integración con RabbitMQ, las pruebas y un flujo Maven de compilación y análisis con Sonar. Su historial recoge la participación de varios colaboradores.",
       "workflowTitle": "Del audio a la revisión.",
-      "workflow": ["Cargar el archivo de audio", "Registrar la consulta", "Recibir un resultado por RabbitMQ", "Consultar el historial y revisar"],
+      "workflow": [
+        "Cargar el archivo de audio",
+        "Registrar la consulta",
+        "Recibir un resultado por RabbitMQ",
+        "Consultar el historial y revisar"
+      ],
       "workflowCaption": "Flujo del prototipo documentado en el código de la aplicación."
     },
     {
@@ -484,10 +643,39 @@
       "problem": "Relacionar el catálogo, el carrito, los pedidos y el stock en una misma aplicación, con opciones distintas para los clientes y para quienes administran las películas.",
       "contribution": "Implementación de un flujo MVC con controladores de películas, carrito y pedidos, vistas Razor y persistencia mediante Entity Framework. El proyecto incluye roles con ASP.NET Identity y una API de consulta del catálogo.",
       "technologyGroups": [
-        { "title": "Interfaz", "items": ["Razor", "Bootstrap", "jQuery"] },
-        { "title": "API y autenticación", "items": ["C#", "ASP.NET MVC 5", ".NET Framework 4.7.2", "ASP.NET Identity", "ASP.NET Web API"] },
-        { "title": "Datos", "items": ["Entity Framework 6", "SQL Server"] },
-        { "title": "Pruebas y herramientas", "items": ["NuGet", "MSBuild", "IIS Express"] }
+        {
+          "title": "Interfaz",
+          "items": [
+            "Razor",
+            "Bootstrap",
+            "jQuery"
+          ]
+        },
+        {
+          "title": "API y autenticación",
+          "items": [
+            "C#",
+            "ASP.NET MVC 5",
+            ".NET Framework 4.7.2",
+            "ASP.NET Identity",
+            "ASP.NET Web API"
+          ]
+        },
+        {
+          "title": "Datos",
+          "items": [
+            "Entity Framework 6",
+            "SQL Server"
+          ]
+        },
+        {
+          "title": "Pruebas y herramientas",
+          "items": [
+            "NuGet",
+            "MSBuild",
+            "IIS Express"
+          ]
+        }
       ],
       "url": "https://github.com/MartxelAran/TiendaPeliculasNet",
       "linkLabel": "Ver código en GitHub",
@@ -500,7 +688,12 @@
       ],
       "evidence": "El repositorio contiene la solución .NET, los controladores, las vistas y los modelos de datos. El script SQL y las dependencias permiten consultar cómo se relacionan películas, pedidos y líneas de pedido.",
       "workflowTitle": "Del catálogo al pedido.",
-      "workflow": ["Consultar películas y stock", "Añadir películas al carrito", "Registrar el pedido", "Actualizar y consultar los pedidos"],
+      "workflow": [
+        "Consultar películas y stock",
+        "Añadir películas al carrito",
+        "Registrar el pedido",
+        "Actualizar y consultar los pedidos"
+      ],
       "workflowCaption": "Flujo implementado en los controladores y vistas del proyecto."
     }
   ]

@@ -1,8 +1,8 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import Layout from '../../layouts/Layout.astro';
-import ExternalLink from '../../components/ExternalLink.astro';
 import Tags from '../../components/Tags.astro';
+import ProjectResources from '../../components/ProjectResources.astro';
 import { portfolio, homeUrl, projectUrl, experienceUrl, number, url, type Project } from '../../lib/portfolio';
 import { wrap, eyebrow, mono, textLink } from '../../lib/ui';
 
@@ -34,6 +34,7 @@ const sections = [
       <p class="mt-5 max-w-[960px] text-[24px] leading-[1.4] tracking-[-.035em] text-code-type sm:text-[32px]">{project.title}</p>
       {project.originalTitle && <p lang="eu" class="mt-4 text-sm leading-relaxed text-muted wrap-anywhere">{project.originalTitle}</p>}
       <p class="mt-6 max-w-[78ch] text-base leading-[1.85] text-muted sm:text-lg">{project.description}</p>
+      {(project.url || project.demoUrl || project.document) && <div class="mt-5 flex flex-wrap items-center gap-x-7 gap-y-3" role="group" aria-label={`Explorar ${project.name}`}><ProjectResources project={project} /></div>}
       <p class="mt-8 border-y border-line py-5 text-sm leading-relaxed text-muted">{project.institution}</p>
       {project.images?.length && <div class:list={["mt-7 grid gap-4", project.images.length > 1 && 'sm:grid-cols-2']} role="group" aria-label="Imágenes del proyecto">
         {project.images.map((image) => <figure class="min-w-0 overflow-hidden rounded border border-line bg-soft">
@@ -84,10 +85,7 @@ const sections = [
           <h2 id="documentation-title" class={contentHeading}>Documentación y enlaces</h2>
           <p class="mt-5 max-w-[72ch] text-base leading-[1.9] text-muted">{project.evidence}</p>
           <div class="mt-5 flex flex-wrap gap-x-7 gap-y-3">
-            {project.document ? (
-              <a href={url(encodeURIComponent(project.document))} hreflang="eu" type="application/pdf" target="_blank" rel="noopener noreferrer" class={`${textLink} underline underline-offset-5`}>{project.linkLabel} <span aria-hidden="true">↗</span><span class="sr-only"> (se abre en una pestaña nueva)</span></a>
-            ) : project.url && <ExternalLink href={project.url} class={`${textLink} underline underline-offset-5`}>{project.linkLabel}</ExternalLink>}
-            {project.demoUrl && <ExternalLink href={project.demoUrl} class={textLink}>Ver web</ExternalLink>}
+            <ProjectResources project={project} />
             {project.experienceSlug && <a href={experienceUrl(project.experienceSlug)} class={textLink}>Ver experiencia <span aria-hidden="true">→</span></a>}
           </div>
         </section>

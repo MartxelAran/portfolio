@@ -1,0 +1,12 @@
+---
+import ExternalLink from './ExternalLink.astro';
+import { url, type Project } from '../lib/portfolio';
+import { textLink } from '../lib/ui';
+
+interface Props { project: Project; }
+const { project } = Astro.props;
+---
+{project.demoUrl && <ExternalLink href={project.demoUrl} class={textLink}>Ver web</ExternalLink>}
+{project.document ? (
+  <a href={url(encodeURIComponent(project.document))} hreflang="eu" type="application/pdf" target="_blank" rel="noopener noreferrer" class={textLink}>{project.linkLabel || 'Leer memoria'} <span aria-hidden="true">↗</span><span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+) : project.url && <ExternalLink href={project.url} class={textLink}>{project.linkLabel || 'Ver recurso'}</ExternalLink>}

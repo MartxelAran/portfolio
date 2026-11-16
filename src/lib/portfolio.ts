@@ -15,6 +15,7 @@ export interface Experience {
   sections: { title: string; text: string }[];
   stack: string[];
   document?: { path: string; label: string };
+  website?: { url: string; label: string };
 }
 
 export interface Project {

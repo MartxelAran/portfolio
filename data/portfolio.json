@@ -3,6 +3,7 @@
   "fullName": "Martxel Aranzadi Olazabal",
   "age": 25,
   "title": "Software developer & full stack",
+  "featuredTechnologies": ["Python", "JavaScript", "SQL", "React", "FastAPI", "PostgreSQL", "Next.js", "Tailwind CSS", "Docker", "RQ", "SeaweedFS", "Apache Airflow", "MySQL", "Java"],
   "location": "Madrid, España",
   "intro": "Me gusta construir soluciones completas: entender qué necesita un proyecto, elegir las tecnologías adecuadas y conectarlas para que funcionen juntas. En equipos pequeños he ido más allá del desarrollo web o full stack, moviéndome entre distintas capas según cada reto.",
   "about": [
@@ -84,8 +85,8 @@
       "slug": "arfima",
       "company": "Arfima Trading",
       "role": "Desarrollo de software · Full stack",
-      "period": "Actualidad",
-      "dates": "Actualidad · Madrid, España",
+      "period": "Octubre de 2024 — actualidad",
+      "dates": "Octubre de 2024 — actualidad · Madrid, España",
       "category": "Ingeniería de software",
       "current": true,
       "summary": "Desarrollo full stack de Alpha-Klima, una plataforma web que conecta el análisis de riesgo climático con métricas financieras.",
@@ -294,6 +295,10 @@
     },
     "sources": [
       {
+        "source": "Fecha de incorporación confirmada por Martxel el 16 de noviembre de 2026",
+        "supports": "Inicio de la etapa actual en Arfima en octubre de 2024."
+      },
+      {
         "source": "Descripción del trabajo actual aportada por Martxel el 16 de noviembre de 2026",
         "supports": "Desarrollo de la plataforma Alpha-Klima: frontend React, backend FastAPI, PostgreSQL, automatizaciones RQ y almacenamiento SeaweedFS compatible con S3. El backend llama a dos librerías, una de cálculo de riesgo climático y otra de conversión a métricas financieras. No se atribuye la autoría de los modelos científicos o financieros ni se inventan métricas de impacto."
       },
@@ -328,7 +333,7 @@
       }
     ],
     "pending": [
-      "Cargo contractual y fecha de incorporación en Arfima Trading. Las responsabilidades y tecnologías de Alpha-Klima están confirmadas por el usuario el 16 de noviembre de 2026; falta concretar un resultado o mejora individual que pueda compartirse.",
+      "Cargo contractual en Arfima Trading. La incorporación en octubre de 2024, las responsabilidades y las tecnologías de Alpha-Klima están confirmadas por el usuario; falta concretar un resultado o mejora individual que pueda compartirse.",
       "Fecha exacta de finalización de la etapa en Innguma; la memoria acredita el curso 2023/2024, pero no fija la fecha laboral.",
       "Institución y periodo exactos del Erasmus en Suecia.",
       "Una cuarta experiencia aparece sin datos identificativos en el LinkedIn público; no se ha añadido una empresa ni un cargo por deducción.",

@@ -49,6 +49,7 @@ export interface Portfolio {
   title: string;
   location: string;
   intro: string;
+  featuredTechnologies: string[];
   about: string[];
   social: { linkedin: string; github: string };
   education: { degree: string; detail: string }[];

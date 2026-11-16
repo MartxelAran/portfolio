@@ -32,6 +32,12 @@
 }
 
 @theme {
+  --animate-tech-scroll: tech-scroll 55s linear infinite;
+
+  @keyframes tech-scroll {
+    to { transform: translateX(-50%); }
+  }
+
   --breakpoint-sm: 601px;
   --breakpoint-md: 801px;
   --breakpoint-lg: 1101px;

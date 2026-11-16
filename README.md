@@ -24,6 +24,7 @@ Las dependencias se utilizan durante el desarrollo y la compilación. El hosting
 ## Editar el contenido
 
 1. Edita **`data/portfolio.json`**: presentación, edad, formación, enlaces, conocimientos y experiencias.
+   La lista `featuredTechnologies` controla la franja animada «Mi stack», que ocupa todo el ancho de la presentación, debajo del texto y la foto. Se puede pausar con el control, el ratón o el foco del teclado; con movimiento reducido se muestra completa y estática.
 2. El servidor de desarrollo refleja los cambios automáticamente.
 3. Para publicar, ejecuta **`npm run build`** y utiliza el contenido de `dist/`.
 
@@ -43,7 +44,7 @@ Los cuerpos principales usan 14–18 px, los enlaces principales tienen una altu
 
 El contenido se ha completado con la vista pública indexada de [LinkedIn](https://es.linkedin.com/in/martxel-aranzadi-olazabal), la ficha del equipo de [Alpha-Klima](https://alpha-klima.com/about/), el resumen público del [TFM en la UPM](https://oa.upm.es/90280/) y las memorias del TFG y TFM aportadas por el usuario, además de la información del portfolio original.
 
-El campo `_editorial` en `data/portfolio.json` registra qué respalda cada fuente y qué queda por confirmar; no se muestra en la web. El 16 de noviembre de 2026 Martxel confirmó su trabajo en el desarrollo de Alpha-Klima: React, FastAPI, PostgreSQL, RQ, SeaweedFS compatible con S3 e integración de dos librerías para riesgo climático y métricas financieras. El contexto del producto se contrastó con su [página de plataforma](https://alpha-klima.com/platform/). No se atribuye la autoría de los modelos ni se añaden cifras de impacto. Siguen pendientes el cargo contractual, la fecha de incorporación y la cuarta experiencia sin identificar. El periodo 2019–2024 se ha asociado al grado por el orden de los estudios en la vista indexada y por la titulación corroborada en Alpha-Klima; esta asociación es una inferencia pendiente de confirmar.
+El campo `_editorial` en `data/portfolio.json` registra qué respalda cada fuente y qué queda por confirmar; no se muestra en la web. El 16 de noviembre de 2026 Martxel confirmó su incorporación en Arfima en octubre de 2024 y su trabajo en el desarrollo de Alpha-Klima: React, FastAPI, PostgreSQL, RQ, SeaweedFS compatible con S3 e integración de dos librerías para riesgo climático y métricas financieras. El contexto del producto se contrastó con su [página de plataforma](https://alpha-klima.com/platform/). No se atribuye la autoría de los modelos ni se añaden cifras de impacto. Siguen pendientes el cargo contractual y la cuarta experiencia sin identificar. El periodo 2019–2024 se ha asociado al grado por el orden de los estudios en la vista indexada y por la titulación corroborada en Alpha-Klima; esta asociación es una inferencia pendiente de confirmar.
 
 Los idiomas conservan los niveles publicados en LinkedIn. Las tecnologías de los proyectos académicos se documentan en sus respectivos casos de estudio. La experiencia en Mondragon conserva la descripción basada en el portfolio original.
 

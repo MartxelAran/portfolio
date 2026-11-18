@@ -4,11 +4,10 @@ import portrait from '../assets/sobre-mi.jpeg';
 import { portfolio, experienceUrl } from '../lib/portfolio';
 import { wrap, eyebrow, syntax, button, textLink, statusDot } from '../lib/ui';
 import ExternalLink from './ExternalLink.astro';
-import TechnologyTicker from './TechnologyTicker.astro';
 const [firstName, ...lastNames] = portfolio.name.split(' ');
 const currentExperience = portfolio.experiences.find((experience) => experience.current);
 ---
-<section class:list={[wrap, 'grid grid-cols-1 items-center gap-10 py-12 md:grid-cols-[minmax(0,1.25fr)_minmax(0,.75fr)] md:gap-x-12 md:py-20 lg:gap-x-20']} aria-labelledby="hero-title">
+<section class:list={[wrap, 'grid grid-cols-1 items-center gap-10 pt-12 pb-10 md:grid-cols-[minmax(0,1.25fr)_minmax(0,.75fr)] md:gap-x-12 md:pt-16 md:pb-14 lg:gap-x-20']} aria-labelledby="hero-title">
   <div>
     <p class:list={[eyebrow, 'flex items-center gap-2.5 text-xs text-code-comment']}><span aria-hidden="true">//</span> DESARROLLADOR DE SOFTWARE</p>
     <h1 id="hero-title" class="my-6 text-[clamp(44px,11vw,72px)] leading-[1.08] tracking-[-.055em] md:text-[clamp(60px,6.2vw,88px)]"><span class="block">{firstName}</span><span class={syntax}>{lastNames.join(' ')}</span><span class="text-keyword" aria-hidden="true">_</span></h1>
@@ -22,13 +21,10 @@ const currentExperience = portfolio.experiences.find((experience) => experience.
   </div>
   <figure class="relative w-full max-w-110 justify-self-center overflow-hidden rounded border border-line bg-soft md:justify-self-end">
     <div class="flex items-center justify-between border-b border-line px-4 py-3 text-xs text-muted"><span><span class="mr-2 text-keyword" aria-hidden="true">&#123; &#125;</span>perfil.ts</span><span aria-hidden="true">···</span></div>
-    <div class="relative h-85 overflow-hidden sm:h-97.5 lg:h-107.5">
+    <div class="relative h-72 overflow-hidden sm:h-85 lg:h-95">
       <Image src={portrait} alt="Martxel Aranzadi, con una ciudad y un fiordo al fondo" width={960} widths={[480, 720, 960, 1280]} sizes="(min-width: 1101px) 640px, (min-width: 801px) 560px, (min-width: 480px) 550px, calc(125vw - 50px)" format="webp" quality={80} loading="eager" fetchpriority="high" class="h-full w-full origin-[50%_77%] scale-[1.25] object-cover object-[50%_72%] grayscale md:origin-[50%_78%] md:scale-[1.45] md:object-[50%_78%]" />
       <div class="pointer-events-none absolute inset-x-0 top-[55%] bottom-0 bg-linear-to-b from-transparent to-photo-overlay" aria-hidden="true"></div>
     </div>
     <figcaption class="absolute inset-x-5 bottom-5 text-sm text-photo-caption">{portfolio.location}</figcaption>
   </figure>
-  <div class="min-w-0 md:col-span-2">
-    <TechnologyTicker />
-  </div>
 </section>

@@ -49,13 +49,12 @@ export interface Portfolio {
   title: string;
   location: string;
   intro: string;
-  featuredTechnologies: string[];
   about: string[];
   social: { linkedin: string; github: string };
   education: { degree: string; detail: string }[];
   languages: { name: string; level: string }[];
   projects: Project[];
-  skills: { number: string; symbol: string; title: string; description: string; tags: string[] }[];
+  skills: { icon: string; title: string; description: string; tags: string[] }[];
   experiences: Experience[];
 }
 

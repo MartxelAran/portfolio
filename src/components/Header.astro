@@ -12,10 +12,10 @@ const navLink = 'relative inline-flex min-h-11 items-center py-2.5 after:absolut
     <span class="menu-label">Menú</span><span class="h-2.5 w-[19px] border-y border-ink transition-transform [[aria-expanded=true]_&]:-rotate-45" aria-hidden="true"></span>
   </button>
   <nav id="main-nav" class="main-nav order-4 grid w-full grid-cols-2 items-center gap-x-5 gap-y-2 pb-5 text-sm js:max-md:hidden js:max-md:data-[open=true]:grid md:order-2 md:flex md:w-auto md:gap-5 md:pb-0 md:text-[13px]" data-open="false" aria-label="Navegación principal">
+    <a class={navLink} href={`${homeUrl}#sobre-mi`}>Sobre mí</a>
+    <a class={navLink} href={`${homeUrl}#conocimientos`}>Stack</a>
     <a class={navLink} href={`${homeUrl}#proyectos`}>Proyectos</a>
     <a class={navLink} href={`${homeUrl}#experiencia`}>Experiencia</a>
-    <a class={navLink} href={`${homeUrl}#sobre-mi`}>Sobre mí</a>
-    <a class={navLink} href={`${homeUrl}#conocimientos`}>Conocimientos</a>
     <a class="flex min-h-11 items-center justify-between gap-3 rounded-[3px] border border-line px-3 py-[9px] transition-colors hover:border-accent hover:bg-accent hover:text-on-accent" href={`${homeUrl}#contacto`}>Hablemos <span aria-hidden="true">↗</span></a>
   </nav>
 </header>

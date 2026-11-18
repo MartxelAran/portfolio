@@ -1,0 +1,26 @@
+---
+import { portfolio, number } from '../lib/portfolio';
+import { wrap, sectionSpace, eyebrow, heading, syntax, mono } from '../lib/ui';
+---
+<section id="formacion" class="border-y border-line bg-soft" aria-labelledby="education-title">
+  <div class:list={[wrap, sectionSpace, 'grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,.8fr)_minmax(0,1.2fr)] md:gap-14']}>
+    <div>
+      <p class={eyebrow}>04 / FORMACIÓN E IDIOMAS</p>
+      <h2 id="education-title" class={heading}>Una base para<br /><span class={syntax}>seguir aprendiendo.</span></h2>
+    </div>
+    <div class="min-w-0">
+      <ol aria-label="Formación académica">
+        {portfolio.education.map((item, index) => (
+          <li class="grid grid-cols-[25px_minmax(0,1fr)] items-start gap-4 border-t border-line py-5 first:border-t-0 first:pt-0">
+            <span class:list={[mono, 'pt-1 text-muted']} aria-hidden="true">{number(index)}</span>
+            <div><h3 class="text-base leading-[1.5] tracking-[-.025em]">{item.degree}</h3><p class="mt-1 text-xs leading-relaxed text-muted">{item.detail}</p></div>
+          </li>
+        ))}
+      </ol>
+      <div class="mt-5 border-t border-line pt-6">
+        <h3 class={eyebrow}>IDIOMAS</h3>
+        <dl class="mt-4 grid gap-4">{portfolio.languages.map((language) => <div class="grid grid-cols-[minmax(0,.65fr)_minmax(0,1fr)] items-baseline gap-4"><dt class="text-sm">{language.name}</dt><dd class="text-right text-xs leading-relaxed text-muted">{language.level}</dd></div>)}</dl>
+      </div>
+    </div>
+  </div>
+</section>

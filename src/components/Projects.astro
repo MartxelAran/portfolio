@@ -8,7 +8,7 @@ import ProjectResources from './ProjectResources.astro';
 const projects: Project[] = portfolio.projects;
 ---
 <section id="proyectos" class:list={[wrap, sectionSpace]} aria-labelledby="projects-title">
-  <SectionHeading label="01 / PROYECTOS" id="projects-title">Software con<br /><span class={syntax}>un problema que resolver.</span><Fragment slot="intro">Una selección de mi trabajo.<br />Entra en cada proyecto para conocer los detalles.</Fragment></SectionHeading>
+  <SectionHeading label="02 / PROYECTOS" id="projects-title">Software con<br /><span class={syntax}>un problema que resolver.</span><Fragment slot="intro">Una selección de mi trabajo.<br />Entra en cada proyecto para conocer los detalles.</Fragment></SectionHeading>
 
   <div>
     {projects.map((project, index) => (

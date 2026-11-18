@@ -3,13 +3,11 @@
   "fullName": "Martxel Aranzadi Olazabal",
   "age": 25,
   "title": "Software developer & full stack",
-  "featuredTechnologies": ["Python", "JavaScript", "SQL", "React", "FastAPI", "PostgreSQL", "Next.js", "Tailwind CSS", "Docker", "RQ", "SeaweedFS", "Apache Airflow", "MySQL", "Java", "Flask", "Spring Boot", "Oracle", "pandas", "Pytest", "Git", "Docker Compose", "C#", "C++", "MongoDB", "Hibernate", "Spring Framework", "GitLab", "GitHub", "HTML", "JWT"],
   "location": "Madrid, España",
-  "intro": "Me gusta construir soluciones completas: entender qué necesita un proyecto, elegir las tecnologías adecuadas y conectarlas para que funcionen juntas. En equipos pequeños he ido más allá del desarrollo web o full stack, moviéndome entre distintas capas según cada reto.",
+  "intro": "Desarrollo aplicaciones web conectando interfaces, APIs y datos. Me gusta entender el problema y construir soluciones completas con las tecnologías que necesita cada proyecto.",
   "about": [
-    "Mi recorrido va de la administración de bases de datos Oracle al desarrollo de aplicaciones web y al análisis de riesgo climático. En equipos pequeños he aprendido a moverme entre capas y tecnologías para resolver lo que necesita cada proyecto, desde organizar los datos hasta conectarlos con una interfaz o automatizar un proceso.",
-    "Me gradué en Ingeniería Informática en Mondragon Unibertsitatea y completé el Máster en Ingeniería Web en la Universidad Politécnica de Madrid. Mi formación también incluye una experiencia Erasmus en Suecia.",
-    "Me interesa construir el conjunto: entender el problema, encontrar las piezas tecnológicas adecuadas y hacer que trabajen juntas en una solución útil. También formo parte del equipo de ingeniería de Alpha-Klima."
+    "Empecé administrando bases de datos Oracle y fui ampliando mi recorrido hacia el desarrollo web. Hoy formo parte del equipo de ingeniería de Alpha-Klima, en Arfima Trading, donde conecto la plataforma con el análisis de riesgo climático y las métricas financieras.",
+    "Trabajar en equipos pequeños me ha enseñado a moverme entre distintas capas, aprender según el reto y cuidar cómo encaja cada pieza en el conjunto."
   ],
   "social": {
     "linkedin": "https://linkedin.com/in/martxel-aranzadi-olazabal/",
@@ -45,38 +43,44 @@
   ],
   "skills": [
     {
-      "number": "01",
-      "symbol": "</>",
-      "title": "Desarrollo full stack",
-      "description": "Interfaces con React, Next.js y MUI; APIs con Python, Flask y FastAPI. En el TFG también integré el catálogo en el software existente con PHP y Joomla.",
+      "icon": "interface",
+      "title": "Interfaz",
+      "description": "Aplicaciones web para consultar, gestionar y trabajar con la información.",
       "tags": [
-        "React · Next.js",
-        "MUI",
-        "Python · FastAPI · Flask",
-        "PHP · Joomla"
+        "React",
+        "Next.js",
+        "Tailwind CSS"
       ]
     },
     {
-      "number": "02",
-      "symbol": "{ }",
-      "title": "Bases de datos",
-      "description": "Administración de Oracle durante mis prácticas, diseño de una base de datos MySQL para el catálogo de fuentes del TFG y PostgreSQL en el TFM.",
+      "icon": "backend",
+      "title": "Backend",
+      "description": "APIs que conectan la interfaz con la lógica y los servicios de cada proyecto.",
       "tags": [
-        "Oracle",
+        "Python",
+        "FastAPI",
+        "Flask"
+      ]
+    },
+    {
+      "icon": "database",
+      "title": "Datos",
+      "description": "Diseño, consulta y administración de bases de datos relacionales.",
+      "tags": [
+        "PostgreSQL",
         "MySQL",
-        "PostgreSQL"
+        "Oracle"
       ]
     },
     {
-      "number": "03",
-      "symbol": "⌘",
-      "title": "Integración y producto",
-      "description": "En Alpha-Klima conecto la plataforma con los motores de riesgo climático y métricas financieras, en un entorno con RQ y almacenamiento SeaweedFS compatible con S3. En el TFM trabajé con Apache Airflow, pandas, MinIO y pruebas con Vitest y Pytest.",
+      "icon": "workflow",
+      "title": "Procesos e infraestructura",
+      "description": "Tareas en segundo plano, flujos de datos y almacenamiento de objetos.",
       "tags": [
+        "Docker",
         "RQ",
-        "SeaweedFS · S3",
         "Apache Airflow",
-        "Vitest · Pytest"
+        "SeaweedFS"
       ]
     }
   ],

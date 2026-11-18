@@ -5,7 +5,7 @@ import SectionHeading from './SectionHeading.astro';
 import Tags from './Tags.astro';
 ---
 <section id="experiencia" class:list={[wrap, sectionSpace]} aria-labelledby="experience-title">
-  <SectionHeading label="02 / EXPERIENCIA" id="experience-title">De administrar datos<br /><span class={syntax}>a construir plataformas.</span></SectionHeading>
+  <SectionHeading label="03 / EXPERIENCIA" id="experience-title">Un recorrido entre<br /><span class={syntax}>datos y desarrollo.</span></SectionHeading>
   <div>
     {portfolio.experiences.map((experience, index) => (
       <a href={experienceUrl(experience.slug)} class="experience-row group grid grid-cols-[18px_minmax(0,1fr)] items-center gap-[13px] border-t border-line py-[25px] transition-colors last:border-b hover:bg-hover sm:grid-cols-[22px_minmax(0,1fr)] sm:gap-[15px] sm:py-[33px] md:grid-cols-[25px_minmax(0,1fr)_minmax(0,1fr)_180px] md:gap-5 lg:grid-cols-[40px_minmax(0,1fr)_minmax(0,1.05fr)_200px] lg:gap-6">

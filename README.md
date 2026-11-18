@@ -24,7 +24,7 @@ Las dependencias se utilizan durante el desarrollo y la compilación. El hosting
 ## Editar el contenido
 
 1. Edita **`data/portfolio.json`**: presentación, edad, formación, enlaces, conocimientos y experiencias.
-   Los estudios de `education` se muestran en la sección «Sobre mí». La lista `featuredTechnologies` controla la franja «Mi stack», debajo de la presentación y a todo el ancho, con nombres separados por barras y desplazamiento continuo. Se puede pausar con el control, el ratón o el foco del teclado; con movimiento reducido se muestra completa y estática.
+   `intro` es el resumen junto a la foto y `about` contiene el recorrido breve que aparece justo después. `skills` controla las cuatro tarjetas estáticas de «Mi stack»: Interfaz, Backend, Datos y Procesos e infraestructura. Cada tarjeta incluye un icono monocromo (`icon`: `interface`, `backend`, `database` o `workflow`), un título, una descripción breve y una selección de tecnologías en `tags`. Los estudios de `education` y los niveles de `languages` se muestran juntos en «Formación e idiomas», después de la experiencia.
 2. El servidor de desarrollo refleja los cambios automáticamente.
 3. Para publicar, ejecuta **`npm run build`** y utiliza el contenido de `dist/`.
 
@@ -36,7 +36,7 @@ Para enlazar documentación utiliza `url` con una dirección externa o `document
 
 ## Criterios de presentación
 
-La portada presenta nombre y especialidad, proyectos, experiencia, formación, conocimientos y contacto, en ese orden. Proyectos utiliza resúmenes y enlaces «Ver proyecto», siguiendo la misma idea que Experiencia. El detalle completo queda en las páginas individuales, con una estructura común para el TFM, el TFG y los proyectos de GitHub. La referencia de estructura es la claridad de [Brittany Chiang](https://brittanychiang.com/), conservando la identidad visual de editor solicitada para este portfolio.
+La portada presenta nombre, foto y especialidad, un recorrido personal breve, stack por áreas, proyectos, experiencia, formación e idiomas y contacto, en ese orden. «Sobre mí» continúa la presentación junto a la foto; la formación queda en un bloque independiente más abajo. El stack destaca una selección fija de tecnologías, sin carrusel ni niveles de dominio; los detalles técnicos se explican en los proyectos y experiencias. Proyectos utiliza resúmenes y enlaces «Leer caso», siguiendo la misma idea que Experiencia. El detalle completo queda en las páginas individuales, con una estructura común para el TFM, el TFG y los proyectos de GitHub. Se conserva la identidad visual de editor solicitada para este portfolio.
 
 Los cuerpos principales usan 14–18 px, los enlaces principales tienen una altura mínima de 44 px y los acentos de texto se han ajustado para mejorar el contraste en ambas paletas. Se han consultado los criterios de [contraste de WCAG 2.2](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Las comprobaciones realizadas incluyen 48 vistas de las páginas entre 320 y 1440 px, menú móvil, teclado, temas, contenido sin JavaScript, enlaces y publicación bajo `/portfolio/`; no constituyen una auditoría completa de conformidad WCAG.
 
@@ -48,7 +48,7 @@ El campo `_editorial` en `data/portfolio.json` registra qué respalda cada fuent
 
 Los idiomas conservan los niveles publicados en LinkedIn. Las tecnologías de los proyectos académicos se documentan en sus respectivos casos de estudio. La experiencia en Mondragon conserva la descripción basada en el portfolio original.
 
-El PDF de aptitudes de LinkedIn aportado por Martxel el 16 de noviembre de 2026 recoge 22 aptitudes en sus páginas 1–3. Se ha registrado como fuente en `_editorial`; las aptitudes declaradas no se convierten en niveles de dominio ni se atribuyen automáticamente al puesto actual. El PDF se mantiene fuera de los recursos públicos. La franja incluye también Flask, Spring Boot, Oracle, pandas, Pytest, Git y Docker Compose, seleccionadas a partir de los proyectos y añadidas a petición de su autor.
+El PDF de aptitudes de LinkedIn aportado por Martxel el 16 de noviembre de 2026 recoge 22 aptitudes en sus páginas 1–3. Se ha registrado como fuente en `_editorial`; las aptitudes declaradas no se convierten en niveles de dominio ni se atribuyen automáticamente al puesto actual. El PDF se mantiene fuera de los recursos públicos. El stack de portada muestra una selección por áreas; otras tecnologías documentadas se conservan en los casos de proyecto y experiencia correspondientes.
 
 La memoria del TFM se ha leído desde `public/MiW.TFM.Memoria.Plantilla Martxel.docx`, aportada por su autor; no se ha descargado el PDF restringido al campus. Los apartados 2.1–2.5 y 5.2–5.6 respaldan React, MUI, react-toastify, Python, FastAPI, Pydantic, OpenAPI/Swagger, GitLab OAuth2, PostgreSQL, pandas, Apache Airflow, MinIO, Docker y Docker Compose. Vitest y Pytest constan en 5.4 y Postman en 1.7.1. Las tecnologías se dividen en las mismas categorías y con el mismo diseño que en el TFG. Vite, ESLint y TypeScript se mencionan como posibilidades del ecosistema, sin confirmar su uso; MinIO no se presenta como un despliegue en AWS. Las herramientas generales de edición y consulta (Visual Studio Code y DataGrip) están registradas en `_editorial`.
 
@@ -77,7 +77,10 @@ La revisión del 12 de noviembre de 2026 abarca los nueve repositorios públicos
 ## Editar el diseño
 
 - `src/components/`: secciones y componentes `.astro`, con los estilos expresados como utilidades de Tailwind.
-- `src/components/Projects.astro`: lista breve de proyectos tras la presentación, generada desde `projects` y enlazada a sus páginas individuales.
+- `src/components/About.astro`: recorrido personal breve, inmediatamente después de la portada con foto.
+- `src/components/Skills.astro`: cuatro tarjetas de stack con iconos monocromos y tecnologías agrupadas por área.
+- `src/components/Projects.astro`: lista breve de proyectos tras el stack, generada desde `projects` y enlazada a sus páginas individuales.
+- `src/components/Education.astro`: formación e idiomas, después de la experiencia.
 - `src/layouts/Layout.astro`: estructura común, metadatos, navegación y pie.
 - `src/pages/index.astro`: composición de la portada.
 - `src/pages/experiencia/[slug].astro`: páginas de experiencia generadas desde el JSON mediante `getStaticPaths`.
